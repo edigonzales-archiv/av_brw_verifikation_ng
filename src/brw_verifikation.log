@@ -1,0 +1,99 @@
+15:52:14.851 [main] INFO  org.catais.brw.verifikation.App - Start: Sun Dec 20 15:52:14 CET 2015
+16:10:53.732 [main] INFO  org.catais.brw.verifikation.App - Start: Sun Dec 20 16:10:53 CET 2015
+16:13:43.979 [main] INFO  org.catais.brw.verifikation.App - Start: Sun Dec 20 16:13:43 CET 2015
+16:14:03.384 [main] INFO  org.catais.brw.verifikation.App - Start: Sun Dec 20 16:14:03 CET 2015
+16:14:03.385 [main] DEBUG org.catais.brw.verifikation.App - localhost
+17:22:08.920 [main] INFO  org.catais.brw.verifikation.App - Start: Sun Dec 20 17:22:08 CET 2015
+17:22:08.922 [main] DEBUG org.catais.brw.verifikation.App - {dbhost=localhost}
+17:22:54.412 [main] INFO  org.catais.brw.verifikation.App - Start: Sun Dec 20 17:22:54 CET 2015
+17:22:54.417 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:22:58.423 [main] INFO  org.catais.brw.verifikation.App - Start: Sun Dec 20 17:22:58 CET 2015
+17:22:58.424 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbhost=localhost, defaultSrsCode=2056, modeldir=null}
+17:24:14.976 [main] INFO  org.catais.brw.verifikation.App - Start: Sun Dec 20 17:24:14 CET 2015
+17:24:14.978 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=fubar}
+17:26:03.563 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:26:03 CET 2015
+17:26:03.565 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:26:03.565 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:26:03 CET 2015
+17:26:09.753 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:26:09 CET 2015
+17:26:09.755 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:26:09.755 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:26:09 CET 2015
+17:34:08.107 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:34:08 CET 2015
+17:34:08.108 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:34:08.110 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:34:08 CET 2015
+17:34:41.520 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:34:41 CET 2015
+17:34:41.522 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:34:41.526 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:34:41 CET 2015
+17:45:46.856 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:45:46 CET 2015
+17:45:46.858 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:45:46.863 [main] ERROR org.catais.brw.verifikation.App - fosnr
+17:45:46.864 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:45:46 CET 2015
+17:46:44.645 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:46:44 CET 2015
+17:46:44.647 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:46:44.652 [main] ERROR org.catais.brw.verifikation.App - Missing option: fosnr
+17:46:44.652 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:46:44 CET 2015
+17:46:56.131 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:46:56 CET 2015
+17:46:56.132 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:46:56.136 [main] ERROR org.catais.brw.verifikation.App - Missing option: fosnr
+17:46:56.136 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:46:56 CET 2015
+17:48:14.037 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:48:14 CET 2015
+17:48:14.039 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:48:50.039 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:48:50 CET 2015
+17:48:50.041 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:49:06.506 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:49:06 CET 2015
+17:49:06.508 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:49:06.511 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:49:06 CET 2015
+17:49:26.840 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:49:26 CET 2015
+17:49:26.841 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:50:26.324 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:50:26 CET 2015
+17:50:26.328 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:50:34.374 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:50:34 CET 2015
+17:50:34.376 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:50:34.379 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:50:34 CET 2015
+17:50:49.555 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:50:49 CET 2015
+17:50:49.556 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:50:49.561 [main] ERROR org.catais.brw.verifikation.App - Missing option: fosnr
+17:50:49.561 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:50:49 CET 2015
+17:51:09.166 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:51:09 CET 2015
+17:51:09.167 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:51:09.171 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:51:09 CET 2015
+17:51:57.792 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:51:57 CET 2015
+17:51:57.794 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:51:57.797 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:51:57 CET 2015
+17:51:59.975 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:51:59 CET 2015
+17:51:59.978 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:51:59.984 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:51:59 CET 2015
+17:52:28.675 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:52:28 CET 2015
+17:52:28.677 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:52:28.680 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:52:28 CET 2015
+17:53:25.053 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:53:25 CET 2015
+17:53:25.059 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:55:25.928 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:55:25 CET 2015
+17:55:25.930 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:55:25.934 [main] ERROR org.catais.brw.verifikation.App - Fosnr is not an integer value.
+17:55:25.934 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:55:25 CET 2015
+17:55:34.305 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:55:34 CET 2015
+17:55:34.307 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:55:34.311 [main] ERROR org.catais.brw.verifikation.App - Fosnr is not an integer value.
+17:55:34.311 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:55:34 CET 2015
+17:55:50.231 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:55:50 CET 2015
+17:55:50.233 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:55:50.237 [main] ERROR org.catais.brw.verifikation.App - Option 'fosnr' is not an integer value.
+17:55:50.237 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:55:50 CET 2015
+17:57:10.490 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:57:10 CET 2015
+17:57:10.492 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:57:10.496 [main] ERROR org.catais.brw.verifikation.App - Option 'fosnr' is not an integer value.
+17:57:10.496 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:57:10 CET 2015
+17:57:19.430 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:57:19 CET 2015
+17:57:19.432 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:57:19.436 [main] ERROR org.catais.brw.verifikation.App - Option 'fosnr' is not an integer value.
+17:57:19.436 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:57:19 CET 2015
+17:58:34.870 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:58:34 CET 2015
+17:58:34.871 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:58:34.875 [main] ERROR org.catais.brw.verifikation.App - Option 'fosnr' is too small.
+17:58:34.875 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:58:34 CET 2015
+17:58:45.761 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:58:45 CET 2015
+17:58:45.762 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:58:45.766 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:58:45 CET 2015
+17:59:25.251 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:59:25 CET 2015
+17:59:25.252 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:59:25.256 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:59:25 CET 2015
