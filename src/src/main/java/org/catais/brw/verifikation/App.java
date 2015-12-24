@@ -71,7 +71,7 @@ public class App {
 				int fosnrInt;
 				
 				try {
-					fosnrInt = Integer.parseInt(cmd.getOptionValue("fosnr"));
+					fosnrInt = Integer.parseInt(cmd.getOptionValue("fosnr"));	
 					
 				} catch (NumberFormatException e) {
 					throw new NumberFormatException("Option 'fosnr' is not an integer value.");
