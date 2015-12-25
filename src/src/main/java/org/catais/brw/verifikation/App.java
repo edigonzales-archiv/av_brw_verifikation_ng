@@ -66,7 +66,7 @@ public class App {
 			// Is it an integer value?
 			// What about the range?
 			if (!cmd.hasOption("fosnr")) {
-				throw new MissingOptionException("fosnr");
+				throw new MissingOptionException("BfS-Nummer nicht gesetzt ('--fosnr').");
 			} else {
 				int fosnrInt;
 				
@@ -74,19 +74,28 @@ public class App {
 					fosnrInt = Integer.parseInt(cmd.getOptionValue("fosnr"));	
 					
 				} catch (NumberFormatException e) {
-					throw new NumberFormatException("Option 'fosnr' is not an integer value.");
+					throw new NumberFormatException("BfS-Nummer ist keine Zahl.");
 				}
 				
 				if (fosnrInt < 2401)  {
-					throw new NumberFormatException("Option 'fosnr' is too small.");
+					throw new NumberFormatException("BfS-Nummer ist zu klein.");
 				}
 				
 				if (fosnrInt > 2700)  {
-					throw new NumberFormatException("Option 'fosnr' is too big.");
+					throw new NumberFormatException("BfS-Nummer ist zu gross.");
 				}
 				
 				params.put("fosnr", fosnr);
 			}
+			
+			// Get the itf file name from Nachführungsgeometer.
+			if (!cmd.hasOption("itf_nf")) {
+				throw new MissingOptionException("ITF von NF-Geometer nicht ausgewählt ('--itf_nf').");
+			} else {
+				itf_nf = cmd.getOptionValue("itf_nf");
+				params.put("itf_nf", itf_nf);
+			}
+			
 			
 			
 			

@@ -97,3 +97,21 @@
 17:59:25.251 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sun Dec 20 17:59:25 CET 2015
 17:59:25.252 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
 17:59:25.256 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sun Dec 20 17:59:25 CET 2015
+16:40:08.608 [main] INFO  org.catais.brw.verifikation.App - Starting at: Fri Dec 25 16:40:08 CET 2015
+16:40:08.611 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+16:40:08.614 [main] ERROR org.catais.brw.verifikation.App - Missing option: ITF von NF-Geometer nicht ausgewählt ('--itf_ng').
+16:40:08.615 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Fri Dec 25 16:40:08 CET 2015
+16:40:16.167 [main] INFO  org.catais.brw.verifikation.App - Starting at: Fri Dec 25 16:40:16 CET 2015
+16:40:16.169 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+16:40:16.172 [main] ERROR org.catais.brw.verifikation.App - Missing option: BfS-Nummer nicht gesetzt ('--fosnr').
+16:40:16.172 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Fri Dec 25 16:40:16 CET 2015
+16:40:27.217 [main] INFO  org.catais.brw.verifikation.App - Starting at: Fri Dec 25 16:40:27 CET 2015
+16:40:27.218 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+16:40:27.222 [main] ERROR org.catais.brw.verifikation.App - Missing option: ITF von NF-Geometer nicht ausgewählt ('--itf_ng').
+16:40:27.222 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Fri Dec 25 16:40:27 CET 2015
+16:40:54.519 [main] INFO  org.catais.brw.verifikation.App - Starting at: Fri Dec 25 16:40:54 CET 2015
+16:40:54.520 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+16:40:54.524 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Fri Dec 25 16:40:54 CET 2015
+16:41:54.032 [main] INFO  org.catais.brw.verifikation.App - Starting at: Fri Dec 25 16:41:54 CET 2015
+16:41:54.034 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+16:41:54.039 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Fri Dec 25 16:41:54 CET 2015
