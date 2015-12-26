@@ -130,3 +130,81 @@
 13:41:35.098 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
 13:41:35.103 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
 13:41:35.103 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sat Dec 26 13:41:35 CET 2015
+14:21:16.517 [main] INFO  org.catais.brw.verification.App - Starting at: Sat Dec 26 14:21:16 CET 2015
+14:21:16.518 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+14:21:16.522 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+14:21:16.523 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 14:21:16 CET 2015
+14:26:03.227 [main] INFO  org.catais.brw.verification.App - Starting at: Sat Dec 26 14:26:03 CET 2015
+14:26:03.229 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+14:26:03.234 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+14:26:03.236 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 14:26:03 CET 2015
+14:31:27.155 [main] INFO  org.catais.brw.verification.App - Starting at: Sat Dec 26 14:31:27 CET 2015
+14:31:27.157 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+14:31:27.163 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+14:31:27.186 [main] ERROR org.catais.brw.verification.TrfChecker - no ID generator given
+14:31:27.187 [main] ERROR org.catais.brw.verification.App - Upsi. Beim Import lief was schief.
+14:31:27.188 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 14:31:27 CET 2015
+14:35:53.034 [main] INFO  org.catais.brw.verification.App - Starting at: Sat Dec 26 14:35:53 CET 2015
+14:35:53.037 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+14:35:53.043 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+14:35:53.064 [main] ERROR org.catais.brw.verification.TrfChecker - no ID generator given
+14:35:53.065 [main] ERROR org.catais.brw.verification.App - Upsi. Beim Import lief was schief.
+14:35:53.066 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 14:35:53 CET 2015
+14:42:32.961 [main] INFO  org.catais.brw.verification.App - Starting at: Sat Dec 26 14:42:32 CET 2015
+14:42:32.964 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+14:42:32.969 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+14:42:33.036 [main] ERROR org.catais.brw.verification.TrfChecker - org.postgresql.util.PSQLException: FATAL: password authentication failed for user "ziegler12"
+14:42:33.038 [main] ERROR org.catais.brw.verification.App - Upsi. Beim Import lief was schief.
+14:42:33.039 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 14:42:33 CET 2015
+14:43:15.159 [main] INFO  org.catais.brw.verification.App - Starting at: Sat Dec 26 14:43:15 CET 2015
+14:43:15.162 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+14:43:15.167 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+14:43:18.486 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 14:43:18 CET 2015
+14:47:24.032 [main] INFO  org.catais.brw.verification.App - Starting at: Sat Dec 26 14:47:24 CET 2015
+14:47:24.034 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+14:47:24.038 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+14:47:24.356 [main] ERROR org.catais.brw.verification.TrfChecker - failed to create schema 2547_nf
+14:47:24.356 [main] ERROR org.catais.brw.verification.App - Upsi. Beim Import lief was schief.
+14:47:24.357 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 14:47:24 CET 2015
+14:48:10.039 [main] INFO  org.catais.brw.verification.App - Starting at: Sat Dec 26 14:48:10 CET 2015
+14:48:10.041 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+14:48:10.048 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+14:48:12.967 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 14:48:12 CET 2015
+14:54:09.602 [main] INFO  org.catais.brw.verification.App - Starting at: Sat Dec 26 14:54:09 CET 2015
+14:54:09.604 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+14:54:09.609 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+14:54:12.595 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 14:54:12 CET 2015
+14:55:45.977 [main] INFO  org.catais.brw.verification.App - Starting at: Sat Dec 26 14:55:45 CET 2015
+14:55:45.979 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+14:55:45.984 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+14:55:48.972 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 14:55:48 CET 2015
+14:57:49.959 [main] INFO  org.catais.brw.verification.App - Starting at: Sat Dec 26 14:57:49 CET 2015
+14:57:49.963 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+14:57:49.969 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+14:57:52.987 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 14:57:52 CET 2015
+14:58:13.681 [main] INFO  org.catais.brw.verification.App - Starting at: Sat Dec 26 14:58:13 CET 2015
+14:58:13.682 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+14:58:13.687 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+14:58:16.710 [main] ERROR org.catais.brw.verification.TrfChecker - ch.interlis.iox.IoxException: java.io.FileNotFoundException: /Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf (No such file or directory)
+14:58:16.711 [main] ERROR org.catais.brw.verification.App - Upsi. Beim Import lief was schief.
+14:58:16.712 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 14:58:16 CET 2015
+14:58:56.605 [main] INFO  org.catais.brw.verification.App - Starting at: Sat Dec 26 14:58:56 CET 2015
+14:58:56.606 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+14:58:56.610 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+14:59:19.604 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 14:59:19 CET 2015
+15:00:14.745 [main] INFO  org.catais.brw.verification.App - Starting at: Sat Dec 26 15:00:14 CET 2015
+15:00:14.747 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+15:00:14.751 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+15:00:14.768 [main] ERROR org.catais.brw.verification.TrfChecker - no xtf-file given
+15:00:14.769 [main] ERROR org.catais.brw.verification.App - Upsi. Beim Import lief was schief.
+15:00:14.769 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 15:00:14 CET 2015
+15:00:59.411 [main] INFO  org.catais.brw.verification.App - Starting at: Sat Dec 26 15:00:59 CET 2015
+15:00:59.412 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+15:00:59.416 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, itf_ig=/home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV03_20150923_lv95.itf, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+15:01:03.784 [main] ERROR org.catais.brw.verification.TrfChecker - ch.interlis.iox.IoxException: java.io.FileNotFoundException: /home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV03_20150923_lv95.itf (No such file or directory)
+15:01:03.785 [main] ERROR org.catais.brw.verification.App - Upsi. Beim Import lief was schief.
+15:01:03.785 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 15:01:03 CET 2015
+15:01:52.416 [main] INFO  org.catais.brw.verification.App - Starting at: Sat Dec 26 15:01:52 CET 2015
+15:01:52.418 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+15:01:52.422 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, itf_ig=/home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_ig/254700_LV03_20150923_lv95.itf, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+15:02:14.612 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 15:02:14 CET 2015

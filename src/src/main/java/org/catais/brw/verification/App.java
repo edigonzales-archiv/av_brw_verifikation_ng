@@ -3,6 +3,8 @@ package org.catais.brw.verification;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import ch.ehi.ili2db.base.Ili2dbException;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -19,8 +21,13 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Properties;
 
-public class App {
+/**
+--fosnr 2547 
+--itf_nf /home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf
+--itf_ig /home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_ig/254700_LV03_20150923_lv95.itf
+*/
 
+public class App {
 	static final Logger logger = LogManager.getLogger(App.class.getName());
 	
 	public static void main(String[] args) {
@@ -40,7 +47,7 @@ public class App {
 			params.put("dbhost", prop.getProperty("dbhost","localhost"));
 			params.put("dbport", prop.getProperty("dbport","5432"));
 			params.put("dbdatabase", prop.getProperty("dbdatabase","sogis_brw_verifikation"));
-			params.put("dbusr", prop.getProperty("dbpwd","stefan"));
+			params.put("dbusr", prop.getProperty("dbusr","stefan"));
 			params.put("dbpwd", prop.getProperty("dbpwd","ziegler12"));
 			params.put("defaultSrsAuth", prop.getProperty("defaultSrsAuth","EPSG"));
 			params.put("defaultSrsCode", prop.getProperty("defaultSrsCode","2056"));
@@ -100,11 +107,21 @@ public class App {
 			if (!cmd.hasOption("itf_ig")) {
 				throw new MissingOptionException("ITF von Infogrips nicht ausgewählt ('--itf_ig').");
 			} else {
-				itf_nf = cmd.getOptionValue("itf_ig");
+				itf_ig = cmd.getOptionValue("itf_ig");
 				params.put("itf_ig", itf_ig);
 			}		
 			
 			logger.debug(params);
+			
+			// Import ITF files.
+			TrfChecker trfChecker = new TrfChecker(params);
+			
+			// Nachführungsgeometer
+//			trfChecker.runImport(params.get("itf_nf"), "so_" + params.get("fosnr") + "_nf");
+			
+			// Infogrips
+			trfChecker.runImport(params.get("itf_ig"), "so_" + params.get("fosnr") + "_ig");
+
 
 
 		} catch (FileNotFoundException e) {
@@ -114,12 +131,17 @@ public class App {
 			e.printStackTrace();
 			logger.error(e.getMessage());
 		} catch (MissingOptionException e) {
-			//e.printStackTrace();
 			logger.error("Missing option: " + e.getMessage());
 		} catch (ParseException e) {
 			e.printStackTrace();
 			logger.error(e.getMessage());
 		} catch (NumberFormatException e) {
+			logger.error(e.getMessage());
+		} catch (Ili2dbException e) {
+			e.printStackTrace();
+			logger.error(e.getMessage());
+		} catch (Exception e) {
+			e.printStackTrace();
 			logger.error(e.getMessage());
 		}
 		
