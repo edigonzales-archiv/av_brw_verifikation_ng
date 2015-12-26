@@ -1,4 +1,4 @@
-package org.catais.brw.verifikation;
+package org.catais.brw.verification;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -85,10 +85,10 @@ public class App {
 					throw new NumberFormatException("BfS-Nummer ist zu gross.");
 				}
 				
-				params.put("fosnr", fosnr);
+				params.put("fosnr", cmd.getOptionValue("fosnr"));
 			}
 			
-			// Get the itf file name from Nachführungsgeometer.
+			// Nachführungsgeometer file name.
 			if (!cmd.hasOption("itf_nf")) {
 				throw new MissingOptionException("ITF von NF-Geometer nicht ausgewählt ('--itf_nf').");
 			} else {
@@ -96,10 +96,16 @@ public class App {
 				params.put("itf_nf", itf_nf);
 			}
 			
+			// Infogrips file name.
+			if (!cmd.hasOption("itf_ig")) {
+				throw new MissingOptionException("ITF von Infogrips nicht ausgewählt ('--itf_ig').");
+			} else {
+				itf_nf = cmd.getOptionValue("itf_ig");
+				params.put("itf_ig", itf_ig);
+			}		
 			
-			
-			
-			
+			logger.debug(params);
+
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

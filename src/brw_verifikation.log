@@ -115,3 +115,18 @@
 16:41:54.032 [main] INFO  org.catais.brw.verifikation.App - Starting at: Fri Dec 25 16:41:54 CET 2015
 16:41:54.034 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
 16:41:54.039 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Fri Dec 25 16:41:54 CET 2015
+13:39:26.704 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sat Dec 26 13:39:26 CET 2015
+13:39:26.715 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+13:39:26.721 [main] ERROR org.catais.brw.verifikation.App - Missing option: ITF von Infogrips nicht ausgewählt ('--itf_ig').
+13:39:26.722 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sat Dec 26 13:39:26 CET 2015
+13:40:42.382 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sat Dec 26 13:40:42 CET 2015
+13:40:42.388 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+13:40:42.400 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sat Dec 26 13:40:42 CET 2015
+13:40:55.040 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sat Dec 26 13:40:55 CET 2015
+13:40:55.042 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+13:40:55.046 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=null}
+13:40:55.046 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sat Dec 26 13:40:55 CET 2015
+13:41:35.096 [main] INFO  org.catais.brw.verifikation.App - Starting at: Sat Dec 26 13:41:35 CET 2015
+13:41:35.098 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+13:41:35.103 [main] DEBUG org.catais.brw.verifikation.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=ziegler12, dbhost=localhost, itf_ig=null, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+13:41:35.103 [main] INFO  org.catais.brw.verifikation.App - Stopping at: Sat Dec 26 13:41:35 CET 2015
