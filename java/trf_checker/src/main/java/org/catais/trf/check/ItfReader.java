@@ -26,6 +26,8 @@ public class ItfReader {
 	
 	String models = null;
 	String modeldir = null;
+	
+	String loglevel = null;
 			
 	public ItfReader(HashMap<String,String> params) {
 		dbhost = params.get("dbhost");		
@@ -39,16 +41,19 @@ public class ItfReader {
 		modeldir = params.get("modeldir");
 		
 		dburl = "jdbc:postgresql://"+dbhost+":"+dbport+"/"+dbdatabase+"?user="+dbusr+"&password="+dbpwd;
+		
+		loglevel = params.get("loglevel");
 	}
 	
 	public void runImport(String fileName, String dbschema) throws Exception {
-		
+		if (loglevel.equalsIgnoreCase("debug")) {
+			EhiLogger.getInstance().setTraceFilter(false);
+		}
+
 		Config config = getConfig();
 		config.setDbschema(dbschema);
 		config.setXtffile(fileName);
-
-		System.out.println(fileName);
-		System.out.println(dbschema);
+		config.setLogfile("trf_checker_ili2pg_"+ dbschema +".log");
 		
 		try {
 			Ili2db.runImport(config, "");

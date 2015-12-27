@@ -51,7 +51,8 @@ public class App
 			params.put("defaultSrsCode", prop.getProperty("defaultSrsCode","2056"));
 			params.put("models", prop.getProperty("models","DM01AVSO24LV95"));
 			params.put("modeldir", prop.getProperty("modeldir","http://www.catais.org/models/"));
-			
+			params.put("loglevel", prop.getProperty("loglevel","debug"));
+
 			logger.debug(params);
 			
 			// Handle the cli options.
@@ -112,16 +113,20 @@ public class App
 			logger.debug(params);
 			
 			// Import ITF files.
-//			ItfReader itfReader = new ItfReader(params);
+			ItfReader itfReader = new ItfReader(params);
 			
 			// Nachführungsgeometer
 			logger.info("Import ITF von NF-Geometer.");
-//			itfReader.runImport(params.get("itf_nf"), "so_" + params.get("fosnr") + "_nf");
+			itfReader.runImport(params.get("itf_nf"), "so_" + params.get("fosnr") + "_nf");
 			
 			// Infogrips
 			logger.info("Import ITF von Infogrips.");
-//			itfReader.runImport(params.get("itf_ig"), "so_" + params.get("fosnr") + "_ig");
+			itfReader.runImport(params.get("itf_ig"), "so_" + params.get("fosnr") + "_ig");
 
+			
+			// TODO: Connection / Transaction?
+			// Delete schema? Eher nein, oben ja auch nicht. Notfalls halt manuell drei Schemas löschen.
+			
 			// Postprocessing
 			// Create schema
 			AgiSchemaProcess agiSchemaProcess = new AgiSchemaProcess(params);
