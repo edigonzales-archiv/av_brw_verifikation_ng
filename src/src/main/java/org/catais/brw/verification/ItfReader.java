@@ -10,8 +10,8 @@ import ch.ehi.ili2db.base.Ili2db;
 import ch.ehi.ili2db.base.Ili2dbException;
 import ch.ehi.ili2db.gui.Config;
 
-public class TrfChecker {
-	static final Logger logger = LogManager.getLogger(TrfChecker.class.getName());
+public class ItfReader {
+	static final Logger logger = LogManager.getLogger(ItfReader.class.getName());
 
 	String dbhost = null;
 	String dbport = null;
@@ -27,7 +27,7 @@ public class TrfChecker {
 	String models = null;
 	String modeldir = null;
 			
-	public TrfChecker(HashMap<String,String> params) {
+	public ItfReader(HashMap<String,String> params) {
 		dbhost = params.get("dbhost");		
 		dbport = params.get("dbport");		
 		dbdatabase = params.get("dbdatabase");		
@@ -86,12 +86,13 @@ public class TrfChecker {
 
 		config.setNameOptimization("topic");
 		config.setMaxSqlNameLength("60");
-		config.setStrokeArcs("enable");
+//		config.setStrokeArcs("enable");
 						
 		config.setSqlNull("enable"); // be less restrictive
 		config.setValue("ch.ehi.sqlgen.createGeomIndex", "True");
 //		config.setCreateEnumCols("addTxtCol");
 		config.setTidHandling(config.TID_HANDLING_PROPERTY);
+		config.setCreateFkIdx(config.CREATE_FKIDX_YES);
 				
 		config.setDefaultSrsAuthority(defaultSrsAuth);
 		config.setDefaultSrsCode(defaultSrsCode);

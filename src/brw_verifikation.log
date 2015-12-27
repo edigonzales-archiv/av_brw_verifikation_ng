@@ -208,3 +208,30 @@
 15:01:52.418 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
 15:01:52.422 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, itf_ig=/home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_ig/254700_LV03_20150923_lv95.itf, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
 15:02:14.612 [main] INFO  org.catais.brw.verification.App - Stopping at: Sat Dec 26 15:02:14 CET 2015
+15:57:58.611 [main] INFO  org.catais.brw.verification.App - Starting at: Sun Dec 27 15:57:58 CET 2015
+15:57:58.612 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+15:57:58.617 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, itf_ig=/home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_ig/254700_LV03_20150923_lv95.itf, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+15:57:58.618 [main] INFO  org.catais.brw.verification.App - Import ITF von NF-Geometer.
+15:58:03.002 [main] ERROR org.catais.brw.verification.ItfReader - failed to insert setting
+15:58:03.003 [main] ERROR org.catais.brw.verification.App - Upsi. Beim Import lief was schief.
+15:58:03.004 [main] INFO  org.catais.brw.verification.App - Stopping at: Sun Dec 27 15:58:03 CET 2015
+15:59:55.124 [main] INFO  org.catais.brw.verification.App - Starting at: Sun Dec 27 15:59:55 CET 2015
+15:59:55.130 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+15:59:55.136 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, itf_ig=/home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_ig/254700_LV03_20150923_lv95.itf, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+15:59:55.137 [main] INFO  org.catais.brw.verification.App - Import ITF von NF-Geometer.
+16:00:22.931 [main] INFO  org.catais.brw.verification.App - Import ITF von Infogrips.
+16:00:43.713 [main] INFO  org.catais.brw.verification.App - Stopping at: Sun Dec 27 16:00:43 CET 2015
+16:48:09.252 [main] INFO  org.catais.brw.verification.App - Starting at: Sun Dec 27 16:48:09 CET 2015
+16:48:09.254 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+16:48:09.258 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, itf_ig=/home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_ig/254700_LV03_20150923_lv95.itf, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+16:48:09.259 [main] INFO  org.catais.brw.verification.App - Import ITF von NF-Geometer.
+16:48:09.260 [main] INFO  org.catais.brw.verification.App - Import ITF von Infogrips.
+16:48:09.585 [main] ERROR org.catais.brw.verification.App - null
+16:48:09.585 [main] INFO  org.catais.brw.verification.App - Stopping at: Sun Dec 27 16:48:09 CET 2015
+16:51:00.788 [main] INFO  org.catais.brw.verification.App - Starting at: Sun Dec 27 16:51:00 CET 2015
+16:51:00.790 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+16:51:00.793 [main] DEBUG org.catais.brw.verification.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, itf_nf=/home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf, defaultSrsAuth=EPSG, dbusr=stefan, dbhost=localhost, itf_ig=/home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_ig/254700_LV03_20150923_lv95.itf, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2547}
+16:51:00.793 [main] INFO  org.catais.brw.verification.App - Import ITF von NF-Geometer.
+16:51:00.793 [main] INFO  org.catais.brw.verification.App - Import ITF von Infogrips.
+16:51:01.038 [main] ERROR org.catais.brw.verification.App - null
+16:51:01.038 [main] INFO  org.catais.brw.verification.App - Stopping at: Sun Dec 27 16:51:01 CET 2015

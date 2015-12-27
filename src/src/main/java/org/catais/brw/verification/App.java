@@ -114,14 +114,15 @@ public class App {
 			logger.debug(params);
 			
 			// Import ITF files.
-			TrfChecker trfChecker = new TrfChecker(params);
+//			ItfReader itfReader = new ItfReader(params);
 			
 			// Nachführungsgeometer
-//			trfChecker.runImport(params.get("itf_nf"), "so_" + params.get("fosnr") + "_nf");
+			logger.info("Import ITF von NF-Geometer.");
+//			itfReader.runImport(params.get("itf_nf"), "so_" + params.get("fosnr") + "_nf");
 			
 			// Infogrips
-			trfChecker.runImport(params.get("itf_ig"), "so_" + params.get("fosnr") + "_ig");
-
+			logger.info("Import ITF von Infogrips.");
+//			itfReader.runImport(params.get("itf_ig"), "so_" + params.get("fosnr") + "_ig");
 
 
 		} catch (FileNotFoundException e) {
@@ -137,9 +138,9 @@ public class App {
 			logger.error(e.getMessage());
 		} catch (NumberFormatException e) {
 			logger.error(e.getMessage());
-		} catch (Ili2dbException e) {
-			e.printStackTrace();
-			logger.error(e.getMessage());
+//		} catch (Ili2dbException e) {
+//			e.printStackTrace();
+//			logger.error(e.getMessage());
 		} catch (Exception e) {
 			e.printStackTrace();
 			logger.error(e.getMessage());

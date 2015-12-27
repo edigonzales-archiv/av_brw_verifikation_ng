@@ -2,10 +2,18 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 
 repositories {
+  maven {
+      url "http://www.catais.org/maven/repository/release/"
+  }
+  maven {
+      name = "osgeo";
+      url = "http://download.osgeo.org/webdav/geotools/"
+  }
+  maven {
+      name = "Boundless Maven Repository";
+      url = "http://repo.boundlessgeo.com/main/"
+  }
     mavenCentral()
-    maven {
-        url "http://www.catais.org/maven/repository/release/"
-    }
 }
 
 dependencies {
@@ -19,6 +27,11 @@ dependencies {
     compile 'org.postgresql:postgresql:9.4-1201-jdbc41'
     compile 'ch.interlis:ili2c:4.5.20'
     compile 'ch.interlis:ili2pg:2.5.0'
+    compile "org.geotools:gt-main:15-SNAPSHOT"
+    compile "org.geotools:gt-epsg-hsql:15-SNAPSHOT"
+    compile "org.geotools.jdbc:gt-jdbc-postgis:15-SNAPSHOT"
+    compile "org.geotools:gt-process:15-SNAPSHOT"
+    //compile "javax.media:jai_core:1.1.3"
 
     // Declare the dependency for your favourite test framework you want to use in your tests.
     // TestNG is also supported by the Gradle Test task. Just change the
