@@ -3,8 +3,6 @@ package org.catais.trf.check.processing;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.geotools.data.DataStore;
 import org.geotools.data.FeatureStore;
 import org.geotools.data.postgis.PostgisNGDataStoreFactory;
@@ -16,16 +14,14 @@ import org.geotools.feature.simple.SimpleFeatureBuilder;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
 
-import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.MultiPolygon;
 import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.geom.Polygon;
 
-public class ControlPointOutsideProcess extends Process {
-	static final Logger logger = LogManager.getLogger(ControlPointOutsideProcess.class.getName());
+public class CommunityAreaProcess extends Process {
 
-	public ControlPointOutsideProcess(HashMap<String, String> params) {
+	public CommunityAreaProcess(HashMap<String, String> params) {
 		super(params);
 	}
 
@@ -33,8 +29,8 @@ public class ControlPointOutsideProcess extends Process {
 	public void run() throws Exception {
 		// Output data store
 		DataStore dataStoreAgi = new PostgisNGDataStoreFactory().createDataStore(dbparamsAgi);
-		SimpleFeatureType featureType = dataStoreAgi.getSchema("t_trf_lfp3ausserhalb");
-		SimpleFeatureSource featureSource = dataStoreAgi.getFeatureSource("t_trf_lfp3ausserhalb");
+		SimpleFeatureType featureType = dataStoreAgi.getSchema("t_trf_gemeinde");
+		SimpleFeatureSource featureSource = dataStoreAgi.getFeatureSource("t_trf_gemeinde");
 		FeatureStore<SimpleFeatureType, SimpleFeature> featureStore = (FeatureStore<SimpleFeatureType, SimpleFeature>) featureSource;
 		
 		// Input data store.
@@ -65,31 +61,34 @@ public class ControlPointOutsideProcess extends Process {
 	    finally {
 	        iterator.close();
 	    }
-
-	    // Now iterate through all control points and check if they are inside 
-	    // the multipolygon (= Gemeindegrenze).
-		SimpleFeatureSource featureSourceLfp3 = dataStoreNf.getFeatureSource("fixpunktekategorie3_lfp3");
-		SimpleFeatureCollection collectionLfp3 = featureSourceLfp3.getFeatures();
+	    
+	    // Now iterate through all real estates (= Liegenschaften) and sum up the attribute
+	    // "flaechemass". 
+		SimpleFeatureSource featureSourceLs = dataStoreNf.getFeatureSource("liegenschaften_liegenschaft");
+		SimpleFeatureCollection collectionLs = featureSourceLs.getFeatures();
 
 		DefaultFeatureCollection featureCollection = new DefaultFeatureCollection();
-	    iterator = (SimpleFeatureIterator) collectionLfp3.features();
+	    iterator = (SimpleFeatureIterator) collectionLs.features();
+	    int area_attr = 0;
+	    double area_calc = 0;
 	    try {
 	        while(iterator.hasNext()){
-	            SimpleFeature feat = iterator.next();
-	            Point point = (Point) feat.getDefaultGeometry();
-	            
-	            if (!point.intersects(multiPoly)) {
-	            	SimpleFeatureBuilder featBuilder = new SimpleFeatureBuilder(featureType);
-	            	featBuilder.set("t_ili_tid", feat.getAttribute("t_ili_tid"));
-	            	featBuilder.set("nbident", feat.getAttribute("nbident"));
-	            	featBuilder.set("nummer", feat.getAttribute("nummer"));
-	            	featBuilder.set("geometrie", feat.getDefaultGeometry());
-	            	
-	            	SimpleFeature errorFeature = featBuilder.buildFeature(null);
-	            	featureCollection.add(errorFeature);
-	            }	            
+	            SimpleFeature feat = iterator.next();	            
+	            area_attr = area_attr + (int) feat.getAttribute("flaechenmass");
+	            area_calc = area_calc + (double) ((Polygon) feat.getDefaultGeometry()).getArea();
 	        }
-	        logger.debug("Errors found: " + featureCollection.size());
+	        logger.debug("Summe Flaechmass: " + area_attr);
+	       
+        	SimpleFeatureBuilder featBuilder = new SimpleFeatureBuilder(featureType);
+        	featBuilder.set("flaeche_gem", multiPoly.getArea());
+        	featBuilder.set("flaeche_ls_attr", area_attr);
+        	featBuilder.set("flaeche_ls_calc", area_calc);
+        	featBuilder.set("geometrie", multiPoly);
+        	
+        	SimpleFeature checkFeature = featBuilder.buildFeature(null);
+        	featureCollection.add(checkFeature);
+
+	        logger.debug("Number of check features (should be one): " + featureCollection.size());
 	        
 	        // Write features to database.
 	        writeFeatures(featureCollection, featureStore);
@@ -101,6 +100,8 @@ public class ControlPointOutsideProcess extends Process {
 
 	    dataStoreNf.dispose();
 	    dataStoreAgi.dispose();
+
+
 	}
 
 }

@@ -17,6 +17,8 @@ import org.apache.commons.cli.ParseException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.catais.trf.check.processing.CheckTablesProcess;
+import org.catais.trf.check.processing.CommunityAreaProcess;
+import org.catais.trf.check.processing.ControlPointOutsideProcess;
 import org.catais.trf.check.processing.IdentIdGeometryProcess;
 import org.catais.trf.check.processing.SchemaProcess;
 
@@ -26,8 +28,8 @@ import org.catais.trf.check.processing.SchemaProcess;
 --itf_ig /home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_ig/254700_LV03_20150923_lv95.itf
 
 --fosnr 2511 
---itf_nf /home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig.itf
---itf_ig /home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig_lfp3_ausserhalb.itf
+--itf_nf /home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig_lfp3_ausserhalb.itf
+--itf_ig /home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig.itf
 
 */
 
@@ -144,7 +146,18 @@ public class App
 			// Find wrong geometries of Nummerierungsbereiche
 			logger.info("Prüfe NB-Geometrien.");
 			IdentIdGeometryProcess identIdGeometryProcess = new IdentIdGeometryProcess(params);
-			identIdGeometryProcess.run();
+//			identIdGeometryProcess.run();
+			
+			// Find control points category 3 outside perimeter
+			logger.info("LFP3 ausserhalb Gemeindegrenze.");
+			ControlPointOutsideProcess controlPointOutsideProcess = new ControlPointOutsideProcess(params);
+//			controlPointOutsideProcess.run();
+			
+			// Calculate sum areas real estate and compare it with
+			// area of municipality.
+			logger.info("Flächenvergleich Liegenschaft - Gemeindegrenze");
+			CommunityAreaProcess communityAreaProcess = new CommunityAreaProcess(params);
+			communityAreaProcess.run();
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
