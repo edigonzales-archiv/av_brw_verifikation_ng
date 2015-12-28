@@ -16,7 +16,8 @@ import org.apache.commons.cli.Options;
 import org.apache.commons.cli.ParseException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.catais.trf.check.processing.AgiSchemaProcess;
+import org.catais.trf.check.processing.CheckTablesProcess;
+import org.catais.trf.check.processing.SchemaProcess;
 
 /**
 --fosnr 2547 
@@ -41,7 +42,7 @@ public class App
 			
 			Properties prop = new Properties();
 			prop.load(input);
-			
+						
 			params.put("dbhost", prop.getProperty("dbhost","localhost"));
 			params.put("dbport", prop.getProperty("dbport","5432"));
 			params.put("dbdatabase", prop.getProperty("dbdatabase","sogis_brw_verifikation"));
@@ -51,7 +52,7 @@ public class App
 			params.put("defaultSrsCode", prop.getProperty("defaultSrsCode","2056"));
 			params.put("models", prop.getProperty("models","DM01AVSO24LV95"));
 			params.put("modeldir", prop.getProperty("modeldir","http://www.catais.org/models/"));
-			params.put("loglevel", prop.getProperty("loglevel","debug"));
+			params.put("loglevel", prop.getProperty("loglevel","info"));
 
 			logger.debug(params);
 			
@@ -117,20 +118,23 @@ public class App
 			
 			// Nachführungsgeometer
 			logger.info("Import ITF von NF-Geometer.");
-			itfReader.runImport(params.get("itf_nf"), "so_" + params.get("fosnr") + "_nf");
+//			itfReader.runImport(params.get("itf_nf"), "so_" + params.get("fosnr") + "_nf");
 			
 			// Infogrips
 			logger.info("Import ITF von Infogrips.");
-			itfReader.runImport(params.get("itf_ig"), "so_" + params.get("fosnr") + "_ig");
+//			itfReader.runImport(params.get("itf_ig"), "so_" + params.get("fosnr") + "_ig");
 
 			
 			// TODO: Connection / Transaction?
-			// Delete schema? Eher nein, oben ja auch nicht. Notfalls halt manuell drei Schemas löschen.
 			
 			// Postprocessing
-			// Create schema
-			AgiSchemaProcess agiSchemaProcess = new AgiSchemaProcess(params);
-			agiSchemaProcess.run();
+			// Create "_agi" schema
+			SchemaProcess schemaProcess = new SchemaProcess(params);
+//			schemaProcess.run();
+			
+			// Create empty check tables
+			CheckTablesProcess checkTablesProcess = new CheckTablesProcess(params);
+			checkTablesProcess.run();
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

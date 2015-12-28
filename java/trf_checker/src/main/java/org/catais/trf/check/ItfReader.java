@@ -91,7 +91,7 @@ public class ItfReader {
 
 		config.setNameOptimization("topic");
 		config.setMaxSqlNameLength("60");
-//		config.setStrokeArcs("enable");
+		config.setStrokeArcs("enable");
 						
 		config.setSqlNull("enable"); // be less restrictive
 		config.setValue("ch.ehi.sqlgen.createGeomIndex", "True");
