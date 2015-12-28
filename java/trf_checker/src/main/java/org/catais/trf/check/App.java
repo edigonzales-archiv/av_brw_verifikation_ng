@@ -19,6 +19,7 @@ import org.apache.logging.log4j.Logger;
 import org.catais.trf.check.processing.CheckTablesProcess;
 import org.catais.trf.check.processing.CommunityAreaProcess;
 import org.catais.trf.check.processing.ControlPointOutsideProcess;
+import org.catais.trf.check.processing.DiffRealEstateProcess;
 import org.catais.trf.check.processing.IdentIdGeometryProcess;
 import org.catais.trf.check.processing.SchemaProcess;
 
@@ -157,7 +158,12 @@ public class App
 			// area of municipality.
 			logger.info("Flächenvergleich Liegenschaft - Gemeindegrenze");
 			CommunityAreaProcess communityAreaProcess = new CommunityAreaProcess(params);
-			communityAreaProcess.run();
+//			communityAreaProcess.run();
+			
+			// Calculate the diff segments for real estates.
+			logger.info("Differenz der Liegenschaften");
+			DiffRealEstateProcess diffRealEstateProcess = new DiffRealEstateProcess(params);
+			diffRealEstateProcess.run();
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

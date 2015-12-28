@@ -16,7 +16,6 @@ import org.opengis.feature.simple.SimpleFeatureType;
 
 import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.MultiPolygon;
-import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.geom.Polygon;
 
 public class CommunityAreaProcess extends Process {

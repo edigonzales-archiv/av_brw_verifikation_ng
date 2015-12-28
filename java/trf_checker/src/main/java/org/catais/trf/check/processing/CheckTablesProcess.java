@@ -51,11 +51,22 @@ public class CheckTablesProcess extends Process {
 				+ ");\n\n"
 				+ "GRANT SELECT ON " + dbschema + ".t_trf_gemeinde TO mspublic;\n\n\n";
 		
+		String diffLsTable = "CREATE TABLE " + dbschema + ".t_trf_diff_ls\n"
+				+ "(\n"
+				+ " ogc_fid serial,\n"
+				+ " flag varchar,\n"
+				+ " bemerkung varchar,\n"
+				+ " geometrie geometry(LineString,2056),\n"
+				+ " CONSTRAINT t_trf_diff_ls_pkey PRIMARY KEY (ogc_fid) \n"
+				+ ");\n\n"
+				+ "GRANT SELECT ON " + dbschema + ".t_trf_diff_ls TO mspublic;\n\n\n";
+
 		
 		String sql = new StringBuilder()
-					.append(identidTable)
-					.append(controlPointTable)
-					.append(communityTable)
+//					.append(identidTable)
+//					.append(controlPointTable)
+//					.append(communityTable)
+					.append(diffLsTable)
 					.toString();
 				
 

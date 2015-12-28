@@ -3326,3 +3326,77 @@ GRANT SELECT ON so_2511_agi.t_trf_gemeinde TO mspublic;
 18:00:12.138 [main] DEBUG org.catais.trf.check.processing.Process - Number of check features (should be one): 1
 18:00:12.177 [main] DEBUG org.catais.trf.check.processing.Process - Gefundene Fehler gespeichert.
 18:00:12.180 [main] INFO  org.catais.trf.check.App - Stopping at: Mon Dec 28 18:00:12 CET 2015
+18:13:21.216 [main] INFO  org.catais.trf.check.App - Starting at: Mon Dec 28 18:13:21 CET 2015
+18:13:21.218 [main] DEBUG org.catais.trf.check.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, loglevel=info, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+18:13:21.223 [main] DEBUG org.catais.trf.check.App - {dbport=5432, models=DM01AVSO24LV95, itf_nf=/home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig_lfp3_ausserhalb.itf, defaultSrsAuth=EPSG, dbpwd=ziegler12, dbdatabase=sogis_brw_verifikation, loglevel=info, dbusr=stefan, dbhost=localhost, itf_ig=/home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig.itf, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2511}
+18:13:21.226 [main] INFO  org.catais.trf.check.App - Import ITF von NF-Geometer.
+18:13:21.226 [main] INFO  org.catais.trf.check.App - Import ITF von Infogrips.
+18:13:21.226 [main] INFO  org.catais.trf.check.App - Erstelle '_agi' Schema.
+18:13:21.247 [main] INFO  org.catais.trf.check.App - Erstelle leere Check-Tabellen.
+18:13:21.248 [main] DEBUG org.catais.trf.check.processing.CheckTablesProcess - Leere Check-Tabellen: CREATE TABLE so_2511_agi.t_trf_diff_ls
+(
+ ogc_fid serial,
+ flag varchar,
+ bemerkung varchar,
+ geometrie geometry(LineString,2056),
+ CONSTRAINT t_trf_diff_ls_pkey PRIMARY KEY (ogc_fid) 
+);
+
+GRANT SELECT ON so_2511_agi.t_trf_diff_ls TO mspublic;
+
+
+
+18:13:21.353 [main] DEBUG org.catais.trf.check.processing.Process - 0
+18:13:21.355 [main] INFO  org.catais.trf.check.App - Prüfe NB-Geometrien.
+18:13:21.357 [main] INFO  org.catais.trf.check.App - LFP3 ausserhalb Gemeindegrenze.
+18:13:21.359 [main] INFO  org.catais.trf.check.App - Flächenvergleich Liegenschaft - Gemeindegrenze
+18:13:21.360 [main] INFO  org.catais.trf.check.App - Stopping at: Mon Dec 28 18:13:21 CET 2015
+18:17:36.908 [main] INFO  org.catais.trf.check.App - Starting at: Mon Dec 28 18:17:36 CET 2015
+18:17:36.910 [main] DEBUG org.catais.trf.check.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, loglevel=info, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+18:17:36.913 [main] DEBUG org.catais.trf.check.App - {dbport=5432, models=DM01AVSO24LV95, itf_nf=/home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig_lfp3_ausserhalb.itf, defaultSrsAuth=EPSG, dbpwd=ziegler12, dbdatabase=sogis_brw_verifikation, loglevel=info, dbusr=stefan, dbhost=localhost, itf_ig=/home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig.itf, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2511}
+18:17:36.915 [main] INFO  org.catais.trf.check.App - Import ITF von NF-Geometer.
+18:17:36.915 [main] INFO  org.catais.trf.check.App - Import ITF von Infogrips.
+18:17:36.915 [main] INFO  org.catais.trf.check.App - Erstelle '_agi' Schema.
+18:17:36.927 [main] INFO  org.catais.trf.check.App - Erstelle leere Check-Tabellen.
+18:17:36.927 [main] INFO  org.catais.trf.check.App - Prüfe NB-Geometrien.
+18:17:36.929 [main] INFO  org.catais.trf.check.App - LFP3 ausserhalb Gemeindegrenze.
+18:17:36.932 [main] INFO  org.catais.trf.check.App - Flächenvergleich Liegenschaft - Gemeindegrenze
+18:17:36.933 [main] INFO  org.catais.trf.check.App - Differenz der Liegenschaften
+18:17:36.934 [main] INFO  org.catais.trf.check.App - Stopping at: Mon Dec 28 18:17:36 CET 2015
+18:30:34.075 [main] INFO  org.catais.trf.check.App - Starting at: Mon Dec 28 18:30:34 CET 2015
+18:30:34.080 [main] DEBUG org.catais.trf.check.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, loglevel=info, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+18:30:34.084 [main] DEBUG org.catais.trf.check.App - {dbport=5432, models=DM01AVSO24LV95, itf_nf=/home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig_lfp3_ausserhalb.itf, defaultSrsAuth=EPSG, dbpwd=ziegler12, dbdatabase=sogis_brw_verifikation, loglevel=info, dbusr=stefan, dbhost=localhost, itf_ig=/home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig.itf, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2511}
+18:30:34.086 [main] INFO  org.catais.trf.check.App - Import ITF von NF-Geometer.
+18:30:34.086 [main] INFO  org.catais.trf.check.App - Import ITF von Infogrips.
+18:30:34.086 [main] INFO  org.catais.trf.check.App - Erstelle '_agi' Schema.
+18:30:34.095 [main] INFO  org.catais.trf.check.App - Erstelle leere Check-Tabellen.
+18:30:34.095 [main] INFO  org.catais.trf.check.App - Prüfe NB-Geometrien.
+18:30:34.096 [main] INFO  org.catais.trf.check.App - LFP3 ausserhalb Gemeindegrenze.
+18:30:34.098 [main] INFO  org.catais.trf.check.App - Flächenvergleich Liegenschaft - Gemeindegrenze
+18:30:34.098 [main] INFO  org.catais.trf.check.App - Differenz der Liegenschaften
+18:30:35.235 [main] INFO  org.catais.trf.check.App - Stopping at: Mon Dec 28 18:30:35 CET 2015
+18:31:20.364 [main] INFO  org.catais.trf.check.App - Starting at: Mon Dec 28 18:31:20 CET 2015
+18:31:20.365 [main] DEBUG org.catais.trf.check.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, loglevel=info, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+18:31:20.369 [main] DEBUG org.catais.trf.check.App - {dbport=5432, models=DM01AVSO24LV95, itf_nf=/home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig_lfp3_ausserhalb.itf, defaultSrsAuth=EPSG, dbpwd=ziegler12, dbdatabase=sogis_brw_verifikation, loglevel=info, dbusr=stefan, dbhost=localhost, itf_ig=/home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig.itf, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2511}
+18:31:20.370 [main] INFO  org.catais.trf.check.App - Import ITF von NF-Geometer.
+18:31:20.370 [main] INFO  org.catais.trf.check.App - Import ITF von Infogrips.
+18:31:20.370 [main] INFO  org.catais.trf.check.App - Erstelle '_agi' Schema.
+18:31:20.381 [main] INFO  org.catais.trf.check.App - Erstelle leere Check-Tabellen.
+18:31:20.381 [main] INFO  org.catais.trf.check.App - Prüfe NB-Geometrien.
+18:31:20.382 [main] INFO  org.catais.trf.check.App - LFP3 ausserhalb Gemeindegrenze.
+18:31:20.384 [main] INFO  org.catais.trf.check.App - Flächenvergleich Liegenschaft - Gemeindegrenze
+18:31:20.385 [main] INFO  org.catais.trf.check.App - Differenz der Liegenschaften
+18:31:21.486 [main] ERROR org.catais.trf.check.App - org.geotools.data.store.ContentFeatureCollection cannot be cast to org.geotools.feature.DefaultFeatureCollection
+18:31:21.486 [main] INFO  org.catais.trf.check.App - Stopping at: Mon Dec 28 18:31:21 CET 2015
+18:31:52.135 [main] INFO  org.catais.trf.check.App - Starting at: Mon Dec 28 18:31:52 CET 2015
+18:31:52.137 [main] DEBUG org.catais.trf.check.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, loglevel=info, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+18:31:52.140 [main] DEBUG org.catais.trf.check.App - {dbport=5432, models=DM01AVSO24LV95, itf_nf=/home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig_lfp3_ausserhalb.itf, defaultSrsAuth=EPSG, dbpwd=ziegler12, dbdatabase=sogis_brw_verifikation, loglevel=info, dbusr=stefan, dbhost=localhost, itf_ig=/home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig.itf, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2511}
+18:31:52.142 [main] INFO  org.catais.trf.check.App - Import ITF von NF-Geometer.
+18:31:52.142 [main] INFO  org.catais.trf.check.App - Import ITF von Infogrips.
+18:31:52.142 [main] INFO  org.catais.trf.check.App - Erstelle '_agi' Schema.
+18:31:52.153 [main] INFO  org.catais.trf.check.App - Erstelle leere Check-Tabellen.
+18:31:52.154 [main] INFO  org.catais.trf.check.App - Prüfe NB-Geometrien.
+18:31:52.155 [main] INFO  org.catais.trf.check.App - LFP3 ausserhalb Gemeindegrenze.
+18:31:52.157 [main] INFO  org.catais.trf.check.App - Flächenvergleich Liegenschaft - Gemeindegrenze
+18:31:52.158 [main] INFO  org.catais.trf.check.App - Differenz der Liegenschaften
+18:31:53.351 [main] INFO  org.catais.trf.check.App - Stopping at: Mon Dec 28 18:31:53 CET 2015
