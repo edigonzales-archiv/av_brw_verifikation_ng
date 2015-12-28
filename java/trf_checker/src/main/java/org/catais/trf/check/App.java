@@ -17,12 +17,18 @@ import org.apache.commons.cli.ParseException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.catais.trf.check.processing.CheckTablesProcess;
+import org.catais.trf.check.processing.IdentIdGeometryProcess;
 import org.catais.trf.check.processing.SchemaProcess;
 
 /**
 --fosnr 2547 
 --itf_nf /home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/254700_LV95_20151002.itf
 --itf_ig /home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_ig/254700_LV03_20150923_lv95.itf
+
+--fosnr 2511 
+--itf_nf /home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig.itf
+--itf_ig /home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig_lfp3_ausserhalb.itf
+
 */
 
 public class App 
@@ -123,18 +129,22 @@ public class App
 			// Infogrips
 			logger.info("Import ITF von Infogrips.");
 //			itfReader.runImport(params.get("itf_ig"), "so_" + params.get("fosnr") + "_ig");
-
-			
-			// TODO: Connection / Transaction?
 			
 			// Postprocessing
 			// Create "_agi" schema
+			logger.info("Erstelle '_agi' Schema.");
 			SchemaProcess schemaProcess = new SchemaProcess(params);
 //			schemaProcess.run();
 			
 			// Create empty check tables
+			logger.info("Erstelle leere Check-Tabellen.");
 			CheckTablesProcess checkTablesProcess = new CheckTablesProcess(params);
-			checkTablesProcess.run();
+//			checkTablesProcess.run();
+			
+			// Find wrong geometries of Nummerierungsbereiche
+			logger.info("Prüfe NB-Geometrien.");
+			IdentIdGeometryProcess identIdGeometryProcess = new IdentIdGeometryProcess(params);
+			identIdGeometryProcess.run();
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
