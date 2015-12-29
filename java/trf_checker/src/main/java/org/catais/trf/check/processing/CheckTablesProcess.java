@@ -54,7 +54,7 @@ public class CheckTablesProcess extends Process {
 		String diffLsTable = "CREATE TABLE " + dbschema + ".t_trf_diff_ls\n"
 				+ "(\n"
 				+ " ogc_fid serial,\n"
-				+ " flag varchar,\n"
+				+ " t_index integer,\n"
 				+ " bemerkung varchar,\n"
 				+ " geometrie geometry(LineString,2056),\n"
 				+ " CONSTRAINT t_trf_diff_ls_pkey PRIMARY KEY (ogc_fid) \n"

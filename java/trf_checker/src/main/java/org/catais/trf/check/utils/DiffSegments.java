@@ -1,13 +1,25 @@
 package org.catais.trf.check.utils;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.catais.trf.check.processing.DiffRealEstateProcess;
 import org.geotools.data.simple.SimpleFeatureCollection;
-import org.geotools.feature.DefaultFeatureCollection;
+import org.geotools.data.simple.SimpleFeatureIterator;
 import org.geotools.feature.FeatureCollection;
+import org.opengis.feature.simple.SimpleFeature;
+
+import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.geom.GeometryFactory;
+import com.vividsolutions.jts.geom.Polygon;
 
 public class DiffSegments {
+	static final Logger logger = LogManager.getLogger(DiffSegments.class.getName());
 
 	private SimpleFeatureCollection[] fc = new SimpleFeatureCollection[2];
-//	private UnmatchedEdgeExtracter[] uee = new UnmatchedEdgeExtracter[2];
+	private UnmatchedEdgeExtracter[] uee = new UnmatchedEdgeExtracter[2];
 	  
 	public DiffSegments() {
 		
@@ -16,13 +28,39 @@ public class DiffSegments {
 	public void setSegments(int index, FeatureCollection fc)
 	{
 		this.fc[index] = (SimpleFeatureCollection) fc;
+		uee[index] = new UnmatchedEdgeExtracter();
 		
-//		uee[index] = new UnmatchedEdgeExtracter();
-//		for (Iterator it = fc.getFeatures().iterator(); it.hasNext(); ) {
-//			Feature f = (Feature) it.next();
-//			uee[index].add(f.getGeometry());
-//		}
+	    SimpleFeatureIterator iterator = (SimpleFeatureIterator) fc.features();
+	    try {
+	        while(iterator.hasNext()){
+	            SimpleFeature f = iterator.next();	            
+	            uee[index].add((Geometry) f.getDefaultGeometry());
+	        }
+	    }
+	    finally {
+	        iterator.close();
+	    }
 	}
 	
-
+	/**
+	 * Returns all the subedges from fc which are unmatched.
+	 */
+	public List computeDiffEdges(int index)
+	{
+		List diffEdges = new ArrayList();
+		UnmatchedEdgeExtracter otherUee = uee[1 - index];
+		
+	    SimpleFeatureIterator iterator = (SimpleFeatureIterator) fc[index].features();
+	    try {
+	        while(iterator.hasNext()){
+	            SimpleFeature f = iterator.next();	            
+	            otherUee.getDiffEdges((Geometry) f.getDefaultGeometry(), diffEdges);
+	        }
+	    }
+	    finally {
+	        iterator.close();
+	    }
+	    
+	    return diffEdges;	    
+	}
 }

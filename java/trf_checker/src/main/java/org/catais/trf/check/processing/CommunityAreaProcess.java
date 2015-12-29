@@ -3,6 +3,8 @@ package org.catais.trf.check.processing;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.geotools.data.DataStore;
 import org.geotools.data.FeatureStore;
 import org.geotools.data.postgis.PostgisNGDataStoreFactory;
@@ -19,6 +21,7 @@ import com.vividsolutions.jts.geom.MultiPolygon;
 import com.vividsolutions.jts.geom.Polygon;
 
 public class CommunityAreaProcess extends Process {
+	static final Logger logger = LogManager.getLogger(CommunityAreaProcess.class.getName());
 
 	public CommunityAreaProcess(HashMap<String, String> params) {
 		super(params);
