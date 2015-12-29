@@ -61,12 +61,55 @@ public class CheckTablesProcess extends Process {
 				+ ");\n\n"
 				+ "GRANT SELECT ON " + dbschema + ".t_trf_diff_ls TO mspublic;\n\n\n";
 
-		
+		String diffLsProjTable = "CREATE TABLE " + dbschema + ".t_trf_diff_ls_proj\n"
+				+ "(\n"
+				+ " ogc_fid serial,\n"
+				+ " t_index integer,\n"
+				+ " bemerkung varchar,\n"
+				+ " geometrie geometry(LineString,2056),\n"
+				+ " CONSTRAINT t_trf_diff_ls_proj_pkey PRIMARY KEY (ogc_fid) \n"
+				+ ");\n\n"
+				+ "GRANT SELECT ON " + dbschema + ".t_trf_diff_ls_proj TO mspublic;\n\n\n";
+
+		String diffBbTable = "CREATE TABLE " + dbschema + ".t_trf_diff_bb\n"
+				+ "(\n"
+				+ " ogc_fid serial,\n"
+				+ " t_index integer,\n"
+				+ " bemerkung varchar,\n"
+				+ " geometrie geometry(LineString,2056),\n"
+				+ " CONSTRAINT t_trf_diff_bb_pkey PRIMARY KEY (ogc_fid) \n"
+				+ ");\n\n"
+				+ "GRANT SELECT ON " + dbschema + ".t_trf_diff_bb TO mspublic;\n\n\n";
+
+		String diffBbTolTable = "CREATE TABLE " + dbschema + ".t_trf_diff_bb_tol\n"
+				+ "(\n"
+				+ " ogc_fid serial,\n"
+				+ " t_index integer,\n"
+				+ " bemerkung varchar,\n"
+				+ " geometrie geometry(LineString,2056),\n"
+				+ " CONSTRAINT t_trf_diff_bb_tol_pkey PRIMARY KEY (ogc_fid) \n"
+				+ ");\n\n"
+				+ "GRANT SELECT ON " + dbschema + ".t_trf_diff_bb_tol TO mspublic;\n\n\n";
+
+		String diffGemGrTable = "CREATE TABLE " + dbschema + ".t_trf_diff_gemgr\n"
+				+ "(\n"
+				+ " ogc_fid serial,\n"
+				+ " t_index integer,\n"
+				+ " bemerkung varchar,\n"
+				+ " geometrie geometry(LineString,2056),\n"
+				+ " CONSTRAINT t_trf_diff_gemgr_pkey PRIMARY KEY (ogc_fid) \n"
+				+ ");\n\n"
+				+ "GRANT SELECT ON " + dbschema + ".t_trf_diff_gemgr TO mspublic;\n\n\n";
+
 		String sql = new StringBuilder()
 //					.append(identidTable)
 //					.append(controlPointTable)
 //					.append(communityTable)
-					.append(diffLsTable)
+//					.append(diffLsTable)
+//					.append(diffLsProjTable)
+//					.append(diffBbTable)
+					.append(diffBbTolTable)
+//					.append(diffGemGrTable)
 					.toString();
 				
 

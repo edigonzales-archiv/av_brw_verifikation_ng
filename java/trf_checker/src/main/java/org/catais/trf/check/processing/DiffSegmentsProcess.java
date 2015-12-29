@@ -15,35 +15,41 @@ import org.geotools.feature.simple.SimpleFeatureBuilder;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
 
-public class DiffRealEstateProcess extends GeoToolsProcess {
-	static final Logger logger = LogManager.getLogger(DiffRealEstateProcess.class.getName());
+public class DiffSegmentsProcess extends GeoToolsProcess {
+	static final Logger logger = LogManager.getLogger(DiffSegmentsProcess.class.getName());
 
-	public DiffRealEstateProcess(HashMap<String, String> params) throws IOException {
+	String outputTable = null;
+	String inputTable = null;
+	
+	public DiffSegmentsProcess(HashMap<String, String> params) throws IOException {
 		super(params);
+		
+		outputTable = params.get("outputTable");
+		inputTable = params.get("inputTable");
 	}
 
 	@Override
-	public void run() throws Exception {		
+	public void run() throws Exception {
 		// Output
-		SimpleFeatureType featureType = dataStoreAgi.getSchema("t_trf_diff_ls");
-		SimpleFeatureSource featureSource = dataStoreAgi.getFeatureSource("t_trf_diff_ls");
+		SimpleFeatureType featureType = dataStoreAgi.getSchema(outputTable);
+		SimpleFeatureSource featureSource = dataStoreAgi.getFeatureSource(outputTable);
 		FeatureStore<SimpleFeatureType, SimpleFeature> featureStore = (FeatureStore<SimpleFeatureType, SimpleFeature>) featureSource;
 		DefaultFeatureCollection featureCollection = new DefaultFeatureCollection();
 
 		// Input 'Nachfuehrungsgeometer'.
-		SimpleFeatureSource featureSourceLiegenschaftNf = dataStoreNf.getFeatureSource("liegenschaften_liegenschaft");
-		SimpleFeatureCollection collectionLiegenschaftNf = featureSourceLiegenschaftNf.getFeatures();
-		logger.debug("Anzahl Liegenschaften NF-Geometer: " + collectionLiegenschaftNf.size());
+		SimpleFeatureSource featureSourceNf = dataStoreNf.getFeatureSource(inputTable);
+		SimpleFeatureCollection collectionNf = featureSourceNf.getFeatures();
+		logger.debug("Anzahl Features NF-Geometer: " + collectionNf.size());
 
 		// Input 'Infogrips'.
-		SimpleFeatureSource featureSourceLiegenschaftIg = dataStoreIg.getFeatureSource("liegenschaften_liegenschaft");
-		SimpleFeatureCollection collectionLiegenschaftIg = featureSourceLiegenschaftIg.getFeatures();
-		logger.debug("Anzahl Liegenschaften Infogrips: " + collectionLiegenschaftIg.size());
+		SimpleFeatureSource featureSourceIg = dataStoreIg.getFeatureSource(inputTable);
+		SimpleFeatureCollection collectionIg = featureSourceIg.getFeatures();
+		logger.debug("Anzahl Features Infogrips: " + collectionIg.size());
 
 		// Calculate the difference of the line segments.
 		DiffSegments diffSegments = new DiffSegments();
-		diffSegments.setSegments(0, collectionLiegenschaftNf);
-		diffSegments.setSegments(1, collectionLiegenschaftIg);
+		diffSegments.setSegments(0, collectionNf);
+		diffSegments.setSegments(1, collectionIg);
 		
 		List list0 = diffSegments.computeDiffEdges(0);;
 		for (int i = 0; i < list0.size(); i++) {

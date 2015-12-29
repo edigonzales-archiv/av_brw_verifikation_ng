@@ -1,5 +1,6 @@
 package org.catais.trf.check.processing;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -22,24 +23,22 @@ import com.vividsolutions.jts.geom.MultiPolygon;
 import com.vividsolutions.jts.geom.Point;
 import com.vividsolutions.jts.geom.Polygon;
 
-public class ControlPointOutsideProcess extends Process {
+public class ControlPointOutsideProcess extends GeoToolsProcess {
 	static final Logger logger = LogManager.getLogger(ControlPointOutsideProcess.class.getName());
 
-	public ControlPointOutsideProcess(HashMap<String, String> params) {
+	public ControlPointOutsideProcess(HashMap<String, String> params) throws IOException {
 		super(params);
 	}
 
 	@Override
 	public void run() throws Exception {
-		// Output data store
-		DataStore dataStoreAgi = new PostgisNGDataStoreFactory().createDataStore(dbparamsAgi);
+		// Output
 		SimpleFeatureType featureType = dataStoreAgi.getSchema("t_trf_lfp3ausserhalb");
 		SimpleFeatureSource featureSource = dataStoreAgi.getFeatureSource("t_trf_lfp3ausserhalb");
 		FeatureStore<SimpleFeatureType, SimpleFeature> featureStore = (FeatureStore<SimpleFeatureType, SimpleFeature>) featureSource;
-		
-		// Input data store.
-		DataStore dataStoreNf = new PostgisNGDataStoreFactory().createDataStore(dbparamsNf);
-		
+		DefaultFeatureCollection featureCollection = new DefaultFeatureCollection();
+
+		// Input
 		SimpleFeatureSource featureSourceGemeindegrenze = dataStoreNf.getFeatureSource("gemeindegrenzen_gemeindegrenze");
 		SimpleFeatureCollection collectionGemeindegrenze = featureSourceGemeindegrenze.getFeatures();
 		
@@ -71,7 +70,6 @@ public class ControlPointOutsideProcess extends Process {
 		SimpleFeatureSource featureSourceLfp3 = dataStoreNf.getFeatureSource("fixpunktekategorie3_lfp3");
 		SimpleFeatureCollection collectionLfp3 = featureSourceLfp3.getFeatures();
 
-		DefaultFeatureCollection featureCollection = new DefaultFeatureCollection();
 	    iterator = (SimpleFeatureIterator) collectionLfp3.features();
 	    try {
 	        while(iterator.hasNext()){
@@ -98,9 +96,8 @@ public class ControlPointOutsideProcess extends Process {
 	    finally {
 	        iterator.close();
 	    }
-
-	    dataStoreNf.dispose();
-	    dataStoreAgi.dispose();
+	    
+        // Dispose the data stores.
+        disposeDataStores();
 	}
-
 }

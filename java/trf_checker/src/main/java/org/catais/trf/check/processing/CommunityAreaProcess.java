@@ -1,5 +1,6 @@
 package org.catais.trf.check.processing;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -20,24 +21,22 @@ import com.vividsolutions.jts.geom.GeometryFactory;
 import com.vividsolutions.jts.geom.MultiPolygon;
 import com.vividsolutions.jts.geom.Polygon;
 
-public class CommunityAreaProcess extends Process {
+public class CommunityAreaProcess extends GeoToolsProcess {
 	static final Logger logger = LogManager.getLogger(CommunityAreaProcess.class.getName());
 
-	public CommunityAreaProcess(HashMap<String, String> params) {
+	public CommunityAreaProcess(HashMap<String, String> params) throws IOException {
 		super(params);
 	}
 
 	@Override
 	public void run() throws Exception {
-		// Output data store
-		DataStore dataStoreAgi = new PostgisNGDataStoreFactory().createDataStore(dbparamsAgi);
+		// Output
 		SimpleFeatureType featureType = dataStoreAgi.getSchema("t_trf_gemeinde");
 		SimpleFeatureSource featureSource = dataStoreAgi.getFeatureSource("t_trf_gemeinde");
 		FeatureStore<SimpleFeatureType, SimpleFeature> featureStore = (FeatureStore<SimpleFeatureType, SimpleFeature>) featureSource;
-		
-		// Input data store.
-		DataStore dataStoreNf = new PostgisNGDataStoreFactory().createDataStore(dbparamsNf);
-		
+		DefaultFeatureCollection featureCollection = new DefaultFeatureCollection();
+
+		// Input 'Nachfuehrungsgeometer'.
 		SimpleFeatureSource featureSourceGemeindegrenze = dataStoreNf.getFeatureSource("gemeindegrenzen_gemeindegrenze");
 		SimpleFeatureCollection collectionGemeindegrenze = featureSourceGemeindegrenze.getFeatures();
 		
@@ -69,7 +68,6 @@ public class CommunityAreaProcess extends Process {
 		SimpleFeatureSource featureSourceLs = dataStoreNf.getFeatureSource("liegenschaften_liegenschaft");
 		SimpleFeatureCollection collectionLs = featureSourceLs.getFeatures();
 
-		DefaultFeatureCollection featureCollection = new DefaultFeatureCollection();
 	    iterator = (SimpleFeatureIterator) collectionLs.features();
 	    int area_attr = 0;
 	    double area_calc = 0;
@@ -100,10 +98,7 @@ public class CommunityAreaProcess extends Process {
 	        iterator.close();
 	    }
 
-	    dataStoreNf.dispose();
-	    dataStoreAgi.dispose();
-
-
+        // Dispose the data stores.
+        disposeDataStores();
 	}
-
 }

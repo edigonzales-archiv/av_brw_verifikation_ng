@@ -1,5 +1,6 @@
 package org.catais.trf.check.processing;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -26,22 +27,22 @@ import org.opengis.filter.Filter;
 import com.vividsolutions.jts.geom.Coordinate;
 import com.vividsolutions.jts.geom.Polygon;
 
-public class IdentIdGeometryProcess extends Process {
+public class IdentIdGeometryProcess extends GeoToolsProcess {
 	static final Logger logger = LogManager.getLogger(IdentIdGeometryProcess.class.getName());
 
-	public IdentIdGeometryProcess(HashMap<String, String> params) {
+	public IdentIdGeometryProcess(HashMap<String, String> params) throws IOException {
 		super(params);
 	}
 
 	@Override
-	public void run() throws Exception {				
-		DataStore dataStore = new PostgisNGDataStoreFactory().createDataStore(dbparamsAgi);
-				
-		// Get the result feature type, source and store
-		SimpleFeatureType featureType = dataStore.getSchema("t_trf_nbgeometrie");
-		SimpleFeatureSource featureSource = dataStore.getFeatureSource("t_trf_nbgeometrie");
+	public void run() throws Exception {		
+		// Output
+		SimpleFeatureType featureType = dataStoreAgi.getSchema("t_trf_nbgeometrie");
+		SimpleFeatureSource featureSource = dataStoreAgi.getFeatureSource("t_trf_nbgeometrie");
 		FeatureStore<SimpleFeatureType, SimpleFeature> featureStore = (FeatureStore<SimpleFeatureType, SimpleFeature>) featureSource;
+		DefaultFeatureCollection featureCollection = new DefaultFeatureCollection();
 		
+		// Input
 		// Create a simple join with virtual tables
 		String sql = new StringBuilder()
 					.append("SELECT g.*, nb.kt, nb.nbnummer\n")
@@ -63,15 +64,14 @@ public class IdentIdGeometryProcess extends Process {
 		logger.debug("Virtual table geometry type: " + vt.getGeometryType("geometrie"));
 		logger.debug("Virtual table primary key: " + vt.getPrimaryKeyColumns());
 		
-		((JDBCDataStore) dataStore).createVirtualTable(vt);
+		((JDBCDataStore) dataStoreAgi).createVirtualTable(vt);
 		
-		FeatureSource fs = dataStore.getFeatureSource(vtName);
+		FeatureSource fs = dataStoreAgi.getFeatureSource(vtName);
 		FeatureCollection fc = fs.getFeatures();
 		
 		logger.debug("Virtual table feature count: " + fc.size());
 		
 		// Now iterate through the features to find wrong geometries.
-		DefaultFeatureCollection featureCollection = new DefaultFeatureCollection();
 	    SimpleFeatureIterator iterator = (SimpleFeatureIterator) fc.features();
 	    try {
 	        while(iterator.hasNext()){
@@ -119,7 +119,6 @@ public class IdentIdGeometryProcess extends Process {
 	            	// We can stop looping through the coordinates if we found
 	            	// at least one wrong coordinate.
 	            	break;
-	            	
 	            }
 	        }
 	        logger.debug("Errors found: " + featureCollection.size());
@@ -132,6 +131,7 @@ public class IdentIdGeometryProcess extends Process {
 	        iterator.close();
 	    }
 		
-	    dataStore.dispose();
+        // Dispose the data stores.
+        disposeDataStores();
 	}
 }

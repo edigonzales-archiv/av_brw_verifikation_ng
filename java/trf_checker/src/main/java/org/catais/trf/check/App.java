@@ -20,6 +20,8 @@ import org.catais.trf.check.processing.CheckTablesProcess;
 import org.catais.trf.check.processing.CommunityAreaProcess;
 import org.catais.trf.check.processing.ControlPointOutsideProcess;
 import org.catais.trf.check.processing.DiffRealEstateProcess;
+import org.catais.trf.check.processing.DiffSegmentsProcess;
+import org.catais.trf.check.processing.DiffSegmentsWithToleranceProcess;
 import org.catais.trf.check.processing.IdentIdGeometryProcess;
 import org.catais.trf.check.processing.SchemaProcess;
 
@@ -162,8 +164,51 @@ public class App
 			
 			// Calculate the diff segments for real estates.
 			logger.info("Differenz der Liegenschaften");
-			DiffRealEstateProcess diffRealEstateProcess = new DiffRealEstateProcess(params);
-			diffRealEstateProcess.run();
+			
+			params.put("outputTable", "t_trf_diff_ls");
+			params.put("inputTable", "liegenschaften_liegenschaft");
+			
+			DiffSegmentsProcess diffRealEstateProcess = new DiffSegmentsProcess(params);
+//			diffRealEstateProcess.run();
+			
+			// Calculate the diff segments for proj real estates.
+			logger.info("Differenz der projektierten Liegenschaften");
+			
+			params.put("outputTable", "t_trf_diff_ls_proj");
+			params.put("inputTable", "liegenschaften_projliegenschaft");
+			
+			DiffSegmentsProcess diffProjRealEstateProcess = new DiffSegmentsProcess(params);
+//			diffProjRealEstateProcess.run();
+
+			// Calculate the diff segments for land surface.
+			logger.info("Differenz der Bodenbedeckung");
+			
+			params.put("outputTable", "t_trf_diff_bb");
+			params.put("inputTable", "bodenbedeckung_boflaeche");
+			
+			DiffSegmentsProcess diffLandSurfaceProcess = new DiffSegmentsProcess(params);
+//			diffLandSurfaceProcess.run();
+			
+			// Calculate the diff segments community border.
+			logger.info("Differenz der Gemeindegrenze");
+			
+			params.put("outputTable", "t_trf_diff_gemgr");
+			params.put("inputTable", "gemeindegrenzen_gemeindegrenze");
+			
+			DiffSegmentsProcess diffCommunityBorderProcess = new DiffSegmentsProcess(params);
+//			diffCommunityBorderProcess.run();	
+			
+			// Calculate the diff segments for land surface with tolerance.
+			// Can take a long time.
+			logger.info("Differenz der Bodenbedeckung mit Toleranz.");
+			
+			params.put("outputTable", "t_trf_diff_bb_tol");
+			params.put("inputTable", "bodenbedeckung_boflaeche");
+			
+			DiffSegmentsWithToleranceProcess diffToleranceLandSurfaceProcess = new DiffSegmentsWithToleranceProcess(params);
+			diffToleranceLandSurfaceProcess.run();
+
+
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
