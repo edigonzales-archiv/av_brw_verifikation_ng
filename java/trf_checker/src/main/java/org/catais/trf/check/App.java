@@ -19,6 +19,7 @@ import org.apache.logging.log4j.Logger;
 import org.catais.trf.check.processing.CheckTablesProcess;
 import org.catais.trf.check.processing.CommunityAreaProcess;
 import org.catais.trf.check.processing.ControlPointOutsideProcess;
+import org.catais.trf.check.processing.DiffPointsProcess;
 import org.catais.trf.check.processing.DiffRealEstateProcess;
 import org.catais.trf.check.processing.DiffSegmentsProcess;
 import org.catais.trf.check.processing.DiffSegmentsWithToleranceProcess;
@@ -33,6 +34,10 @@ import org.catais.trf.check.processing.SchemaProcess;
 --fosnr 2511 
 --itf_nf /home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig_lfp3_ausserhalb.itf
 --itf_ig /home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig.itf
+
+--fosnr 2503 
+--itf_nf /home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_nf/250300_LV95_20150922.itf
+--itf_ig /home/stefan/Projekte/av_brw_verifikation_ng/data/itf_lv95_ig/250300_LV03_20150921_lv95.itf
 
 */
 
@@ -129,38 +134,38 @@ public class App
 			
 			// Nachführungsgeometer
 			logger.info("Import ITF von NF-Geometer.");
-//			itfReader.runImport(params.get("itf_nf"), "so_" + params.get("fosnr") + "_nf");
+			itfReader.runImport(params.get("itf_nf"), "so_" + params.get("fosnr") + "_nf");
 			
 			// Infogrips
 			logger.info("Import ITF von Infogrips.");
-//			itfReader.runImport(params.get("itf_ig"), "so_" + params.get("fosnr") + "_ig");
+			itfReader.runImport(params.get("itf_ig"), "so_" + params.get("fosnr") + "_ig");
 			
 			// Postprocessing
 			// Create "_agi" schema
 			logger.info("Erstelle '_agi' Schema.");
 			SchemaProcess schemaProcess = new SchemaProcess(params);
-//			schemaProcess.run();
+			schemaProcess.run();
 			
 			// Create empty check tables
 			logger.info("Erstelle leere Check-Tabellen.");
 			CheckTablesProcess checkTablesProcess = new CheckTablesProcess(params);
-//			checkTablesProcess.run();
+			checkTablesProcess.run();
 			
 			// Find wrong geometries of Nummerierungsbereiche
 			logger.info("Prüfe NB-Geometrien.");
 			IdentIdGeometryProcess identIdGeometryProcess = new IdentIdGeometryProcess(params);
-//			identIdGeometryProcess.run();
+			identIdGeometryProcess.run();
 			
 			// Find control points category 3 outside perimeter
 			logger.info("LFP3 ausserhalb Gemeindegrenze.");
 			ControlPointOutsideProcess controlPointOutsideProcess = new ControlPointOutsideProcess(params);
-//			controlPointOutsideProcess.run();
+			controlPointOutsideProcess.run();
 			
 			// Calculate sum areas real estate and compare it with
 			// area of municipality.
 			logger.info("Flächenvergleich Liegenschaft - Gemeindegrenze");
 			CommunityAreaProcess communityAreaProcess = new CommunityAreaProcess(params);
-//			communityAreaProcess.run();
+			communityAreaProcess.run();
 			
 			// Calculate the diff segments for real estates.
 			logger.info("Differenz der Liegenschaften");
@@ -169,7 +174,7 @@ public class App
 			params.put("inputTable", "liegenschaften_liegenschaft");
 			
 			DiffSegmentsProcess diffRealEstateProcess = new DiffSegmentsProcess(params);
-//			diffRealEstateProcess.run();
+			diffRealEstateProcess.run();
 			
 			// Calculate the diff segments for proj real estates.
 			logger.info("Differenz der projektierten Liegenschaften");
@@ -178,7 +183,7 @@ public class App
 			params.put("inputTable", "liegenschaften_projliegenschaft");
 			
 			DiffSegmentsProcess diffProjRealEstateProcess = new DiffSegmentsProcess(params);
-//			diffProjRealEstateProcess.run();
+			diffProjRealEstateProcess.run();
 
 			// Calculate the diff segments for land surface.
 			logger.info("Differenz der Bodenbedeckung");
@@ -187,7 +192,7 @@ public class App
 			params.put("inputTable", "bodenbedeckung_boflaeche");
 			
 			DiffSegmentsProcess diffLandSurfaceProcess = new DiffSegmentsProcess(params);
-//			diffLandSurfaceProcess.run();
+			diffLandSurfaceProcess.run();
 			
 			// Calculate the diff segments community border.
 			logger.info("Differenz der Gemeindegrenze");
@@ -196,19 +201,34 @@ public class App
 			params.put("inputTable", "gemeindegrenzen_gemeindegrenze");
 			
 			DiffSegmentsProcess diffCommunityBorderProcess = new DiffSegmentsProcess(params);
-//			diffCommunityBorderProcess.run();	
+			diffCommunityBorderProcess.run();	
 			
-			// Calculate the diff segments for land surface with tolerance.
-			// Can take a long time.
-			logger.info("Differenz der Bodenbedeckung mit Toleranz.");
+			// Calculate the difference of boundary points.
+			logger.info("Differenz der Grenzpunkte");
 			
-			params.put("outputTable", "t_trf_diff_bb_tol");
-			params.put("inputTable", "bodenbedeckung_boflaeche");
-			
-			DiffSegmentsWithToleranceProcess diffToleranceLandSurfaceProcess = new DiffSegmentsWithToleranceProcess(params);
-			diffToleranceLandSurfaceProcess.run();
+			params.put("outputTable", "t_trf_diff_gp");
+			params.put("inputTable", "liegenschaften_grenzpunkt");
 
+			DiffPointsProcess diffBoundaryPointProcess = new DiffPointsProcess(params);
+			diffBoundaryPointProcess.run();
+			
+			// Calculate the difference of territorial boundary points.
+			logger.info("Differenz der Hoheitsgrenzpunkte");
+			
+			params.put("outputTable", "t_trf_diff_hgp");
+			params.put("inputTable", "gemeindegrenzen_hoheitsgrenzpunkt");
 
+			DiffPointsProcess diffTerritorialBoundaryPointProcess = new DiffPointsProcess(params);
+			diffTerritorialBoundaryPointProcess.run();
+
+			// Calculate the difference of control points points.
+			logger.info("Differenz der LFP3");
+			
+			params.put("outputTable", "t_trf_diff_lfp3");
+			params.put("inputTable", "fixpunktekategorie3_lfp3");
+
+			DiffPointsProcess diffControlPointProcess = new DiffPointsProcess(params);
+			diffControlPointProcess.run();
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();

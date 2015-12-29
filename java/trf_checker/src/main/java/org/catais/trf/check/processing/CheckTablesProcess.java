@@ -100,16 +100,50 @@ public class CheckTablesProcess extends Process {
 				+ " CONSTRAINT t_trf_diff_gemgr_pkey PRIMARY KEY (ogc_fid) \n"
 				+ ");\n\n"
 				+ "GRANT SELECT ON " + dbschema + ".t_trf_diff_gemgr TO mspublic;\n\n\n";
+		
+		String diffGpTable = "CREATE TABLE " + dbschema + ".t_trf_diff_gp\n"
+				+ "(\n"
+				+ " ogc_fid serial,\n"
+				+ " t_index integer,\n"
+				+ " bemerkung varchar,\n"
+				+ " geometrie geometry(Point,2056),\n"
+				+ " CONSTRAINT t_trf_diff_gp_pkey PRIMARY KEY (ogc_fid) \n"
+				+ ");\n\n"
+				+ "GRANT SELECT ON " + dbschema + ".t_trf_diff_gp TO mspublic;\n\n\n";
+		
+		String diffHgpTable = "CREATE TABLE " + dbschema + ".t_trf_diff_hgp\n"
+				+ "(\n"
+				+ " ogc_fid serial,\n"
+				+ " t_index integer,\n"
+				+ " bemerkung varchar,\n"
+				+ " geometrie geometry(Point,2056),\n"
+				+ " CONSTRAINT t_trf_diff_hgp_pkey PRIMARY KEY (ogc_fid) \n"
+				+ ");\n\n"
+				+ "GRANT SELECT ON " + dbschema + ".t_trf_diff_hgp TO mspublic;\n\n\n";
 
+		String diffLfp3Table = "CREATE TABLE " + dbschema + ".t_trf_diff_lfp3\n"
+				+ "(\n"
+				+ " ogc_fid serial,\n"
+				+ " t_index integer,\n"
+				+ " bemerkung varchar,\n"
+				+ " geometrie geometry(Point,2056),\n"
+				+ " CONSTRAINT t_trf_diff_lfp3_pkey PRIMARY KEY (ogc_fid) \n"
+				+ ");\n\n"
+				+ "GRANT SELECT ON " + dbschema + ".t_trf_diff_lfp3 TO mspublic;\n\n\n";
+
+		
 		String sql = new StringBuilder()
-//					.append(identidTable)
-//					.append(controlPointTable)
-//					.append(communityTable)
-//					.append(diffLsTable)
-//					.append(diffLsProjTable)
-//					.append(diffBbTable)
+					.append(identidTable)
+					.append(controlPointTable)
+					.append(communityTable)
+					.append(diffLsTable)
+					.append(diffLsProjTable)
+					.append(diffBbTable)
 					.append(diffBbTolTable)
-//					.append(diffGemGrTable)
+					.append(diffGemGrTable)
+					.append(diffGpTable)				
+					.append(diffHgpTable)
+					.append(diffLfp3Table)
 					.toString();
 				
 
