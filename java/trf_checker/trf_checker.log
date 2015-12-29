@@ -2677,3 +2677,143 @@ GRANT SELECT ON so_2511_nf.v_gebaeudeadressen_lokalisationsnamepos TO mspublic;
 16:44:12.488 [main] INFO  org.catais.trf.check.App - Differenz der Hoheitsgrenzpunkte
 16:44:12.489 [main] INFO  org.catais.trf.check.App - Differenz der LFP3
 16:44:12.490 [main] INFO  org.catais.trf.check.App - Stopping at: Tue Dec 29 16:44:12 CET 2015
+17:29:45.180 [main] INFO  org.catais.trf.check.App - Starting at: Tue Dec 29 17:29:45 CET 2015
+17:29:45.181 [main] DEBUG org.catais.trf.check.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, loglevel=info, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+17:29:45.185 [main] DEBUG org.catais.trf.check.App - {dbport=5432, models=DM01AVSO24LV95, itf_nf=/home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig_fehler.itf, defaultSrsAuth=EPSG, dbpwd=ziegler12, dbdatabase=sogis_brw_verifikation, loglevel=info, dbusr=stefan, dbhost=localhost, itf_ig=/home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig.itf, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2511}
+17:29:45.186 [main] INFO  org.catais.trf.check.App - Import ITF von NF-Geometer.
+17:29:45.187 [main] INFO  org.catais.trf.check.App - Import ITF von Infogrips.
+17:29:45.187 [main] INFO  org.catais.trf.check.App - View für Darstellung erstellen.
+17:29:45.188 [main] DEBUG org.catais.trf.check.processing.Process - Views erstellen: CREATE OR REPLACE VIEW so_2511_nf.v_einzelobjekte_flaechenelement AS
+SELECT fl.*, eo.art 
+FROM so_2511_nf.einzelobjekte_einzelobjekt as eo, so_2511_nf.einzelobjekte_flaechenelement as fl
+WHERE eo.t_id = fl.flaechenelement_von;
+GRANT SELECT ON so_2511_nf.v_einzelobjekte_flaechenelement TO mspublic;
+
+
+CREATE OR REPLACE VIEW so_2511_nf.v_einzelobjekte_linienelement AS
+SELECT li.*, eo.art 
+FROM so_2511_nf.einzelobjekte_einzelobjekt as eo, so_2511_nf.einzelobjekte_linienelement as li
+WHERE eo.t_id = li.linienelement_von;
+GRANT SELECT ON so_2511_nf.v_einzelobjekte_linienelement TO mspublic;
+
+
+CREATE OR REPLACE VIEW so_2511_nf.v_einzelobjekte_punktelement AS
+SELECT pt.*, eo.art 
+FROM so_2511_nf.einzelobjekte_einzelobjekt as eo, so_2511_nf.einzelobjekte_punktelement as pt
+WHERE eo.t_id = pt.punktelement_von;
+GRANT SELECT ON so_2511_nf.v_einzelobjekte_punktelement TO mspublic;
+
+
+CREATE OR REPLACE VIEW so_2511_nf.v_bodenbedeckung_objektnamepos AS
+SELECT p.*, n.name 
+FROM so_2511_nf.bodenbedeckung_objektname as n, so_2511_nf.bodenbedeckung_objektnamepos as p
+WHERE n.t_id = p.objektnamepos_von;
+GRANT SELECT ON so_2511_nf.v_bodenbedeckung_objektnamepos TO mspublic;
+
+
+CREATE OR REPLACE VIEW so_2511_nf.v_liegenschaften_liegenschaft AS
+SELECT l.*, g.nbident, g.nummer, g.egris_egrid, g.art, g.entstehung
+FROM so_2511_nf.liegenschaften_grundstueck as g, so_2511_nf.liegenschaften_liegenschaft as l
+WHERE g.t_id = l.liegenschaft_von;
+GRANT SELECT ON so_2511_nf.v_liegenschaften_liegenschaft TO mspublic;
+
+
+CREATE OR REPLACE VIEW so_2511_nf.v_liegenschaften_projliegenschaft AS
+SELECT l.*, g.nbident, g.nummer, g.egris_egrid, g.art, g.entstehung
+FROM so_2511_nf.liegenschaften_projgrundstueck as g, so_2511_nf.liegenschaften_projliegenschaft as l
+WHERE g.t_id = l.projliegenschaft_von;
+GRANT SELECT ON so_2511_nf.v_liegenschaften_projliegenschaft TO mspublic;
+
+
+CREATE OR REPLACE VIEW so_2511_nf.v_liegenschaften_selbstrecht AS
+SELECT l.*, g.nbident, g.nummer, g.egris_egrid, g.art, g.entstehung
+FROM so_2511_nf.liegenschaften_grundstueck as g, so_2511_nf.liegenschaften_selbstrecht as l
+WHERE g.t_id = l.selbstrecht_von;
+GRANT SELECT ON so_2511_nf.v_liegenschaften_selbstrecht TO mspublic;
+
+
+CREATE OR REPLACE VIEW so_2511_nf.v_liegenschaften_projselbstrecht AS
+SELECT l.*, g.nbident, g.nummer, g.egris_egrid, g.art, g.entstehung
+FROM so_2511_nf.liegenschaften_projgrundstueck as g, so_2511_nf.liegenschaften_projselbstrecht as l
+WHERE g.t_id = l.projselbstrecht_von;
+GRANT SELECT ON so_2511_nf.v_liegenschaften_projselbstrecht TO mspublic;
+
+
+CREATE OR REPLACE VIEW so_2511_nf.v_liegenschaften_grundstueckpos AS
+SELECT p.*, g.nummer, g.art
+FROM so_2511_nf.liegenschaften_grundstueck as g, so_2511_nf.liegenschaften_grundstueckpos as p
+WHERE g.t_id = p.grundstueckpos_von;
+GRANT SELECT ON so_2511_nf.v_liegenschaften_grundstueckpos TO mspublic;
+
+
+CREATE OR REPLACE VIEW so_2511_nf.v_liegenschaften_projgrundstueckpos AS
+SELECT p.*, g.nummer, g.art
+FROM so_2511_nf.liegenschaften_projgrundstueck as g, so_2511_nf.liegenschaften_projgrundstueckpos as p
+WHERE g.t_id = p.projgrundstueckpos_von;
+GRANT SELECT ON so_2511_nf.v_liegenschaften_projgrundstueckpos TO mspublic;
+
+
+CREATE OR REPLACE VIEW so_2511_nf.v_gebaeudeadressen_hausnummerpos AS
+SELECT h.*, g.hausnummer
+FROM so_2511_nf.gebaeudeadressen_gebaeudeeingang as g, so_2511_nf.gebaeudeadressen_hausnummerpos as h
+WHERE g.t_id = h.hausnummerpos_von;
+GRANT SELECT ON so_2511_nf.v_gebaeudeadressen_hausnummerpos TO mspublic;
+
+
+CREATE OR REPLACE VIEW so_2511_nf.v_gebaeudeadressen_lokalisationsnamepos AS
+SELECT p.*, l.atext
+FROM so_2511_nf.gebaeudeadressen_lokalisationsname as l, so_2511_nf.gebaeudeadressen_lokalisationsnamepos as p
+WHERE l.t_id = p.lokalisationsnamepos_von;
+GRANT SELECT ON so_2511_nf.v_gebaeudeadressen_lokalisationsnamepos TO mspublic;
+
+
+
+17:29:45.282 [main] DEBUG org.catais.trf.check.processing.Process - 0
+17:29:45.282 [main] INFO  org.catais.trf.check.App - Erstelle '_agi' Schema.
+17:29:45.283 [main] INFO  org.catais.trf.check.App - Erstelle leere Check-Tabellen.
+17:29:45.284 [main] INFO  org.catais.trf.check.App - Prüfe NB-Geometrien.
+17:29:45.519 [main] INFO  org.catais.trf.check.App - LFP3 ausserhalb Gemeindegrenze.
+17:29:45.520 [main] INFO  org.catais.trf.check.App - Flächenvergleich Liegenschaft - Gemeindegrenze
+17:29:45.521 [main] INFO  org.catais.trf.check.App - Differenz der Liegenschaften
+17:29:45.523 [main] INFO  org.catais.trf.check.App - Differenz der projektierten Liegenschaften
+17:29:45.523 [main] INFO  org.catais.trf.check.App - Differenz der Bodenbedeckung
+17:29:45.524 [main] INFO  org.catais.trf.check.App - Differenz der Gemeindegrenze
+17:29:45.525 [main] INFO  org.catais.trf.check.App - Differenz der Grenzpunkte
+17:29:45.526 [main] INFO  org.catais.trf.check.App - Differenz der Hoheitsgrenzpunkte
+17:29:45.528 [main] INFO  org.catais.trf.check.App - Differenz der LFP3
+17:29:45.529 [main] INFO  org.catais.trf.check.App - Stopping at: Tue Dec 29 17:29:45 CET 2015
+18:09:27.605 [main] INFO  org.catais.trf.check.App - Starting at: Tue Dec 29 18:09:27 CET 2015
+18:09:27.607 [main] DEBUG org.catais.trf.check.App - {dbpwd=ziegler12, dbport=5432, models=DM01AVSO24LV95, dbdatabase=sogis_brw_verifikation, defaultSrsAuth=EPSG, loglevel=info, dbusr=stefan, dbhost=localhost, defaultSrsCode=2056, modeldir=http://www.catais.org/models/}
+18:09:27.611 [main] DEBUG org.catais.trf.check.App - {dbport=5432, models=DM01AVSO24LV95, itf_nf=/home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig_fehler.itf, defaultSrsAuth=EPSG, dbpwd=ziegler12, dbdatabase=sogis_brw_verifikation, loglevel=info, dbusr=stefan, dbhost=localhost, itf_ig=/home/stefan/Projekte/av_brw_verifikation_ng/data/fake/251100_aeschi_lv95_ig.itf, defaultSrsCode=2056, modeldir=http://www.catais.org/models/, fosnr=2511}
+18:09:27.612 [main] INFO  org.catais.trf.check.App - Import ITF von NF-Geometer.
+18:09:27.613 [main] INFO  org.catais.trf.check.App - Import ITF von Infogrips.
+18:09:27.613 [main] INFO  org.catais.trf.check.App - View für Darstellung erstellen.
+18:09:27.614 [main] DEBUG org.catais.trf.check.processing.Process - Views erstellen: CREATE OR REPLACE VIEW so_2511_nf.v_liegenschaften_grenzpunkt AS
+SELECT gp.*, nf.gueltigkeit
+FROM so_2511_nf.liegenschaften_lsnachfuehrung as nf, so_2511_nf.liegenschaften_grenzpunkt as gp
+WHERE nf.t_id = gp.entstehung;
+GRANT SELECT ON so_2511_nf.v_liegenschaften_grenzpunkt TO mspublic;
+
+
+CREATE OR REPLACE VIEW so_2511_nf.v_gemeindegrenzen_hoheitsgrenzpunkt AS
+SELECT gp.*, nf.gueltigkeit
+FROM so_2511_nf.gemeindegrenzen_gemnachfuehrung as nf, so_2511_nf.gemeindegrenzen_hoheitsgrenzpunkt as gp
+WHERE nf.t_id = gp.entstehung;
+GRANT SELECT ON so_2511_nf.v_gemeindegrenzen_hoheitsgrenzpunkt TO mspublic;
+
+
+
+18:09:27.687 [main] DEBUG org.catais.trf.check.processing.Process - 0
+18:09:27.688 [main] INFO  org.catais.trf.check.App - Erstelle '_agi' Schema.
+18:09:27.689 [main] INFO  org.catais.trf.check.App - Erstelle leere Check-Tabellen.
+18:09:27.689 [main] INFO  org.catais.trf.check.App - Prüfe NB-Geometrien.
+18:09:27.927 [main] INFO  org.catais.trf.check.App - LFP3 ausserhalb Gemeindegrenze.
+18:09:27.929 [main] INFO  org.catais.trf.check.App - Flächenvergleich Liegenschaft - Gemeindegrenze
+18:09:27.930 [main] INFO  org.catais.trf.check.App - Differenz der Liegenschaften
+18:09:27.931 [main] INFO  org.catais.trf.check.App - Differenz der projektierten Liegenschaften
+18:09:27.932 [main] INFO  org.catais.trf.check.App - Differenz der Bodenbedeckung
+18:09:27.933 [main] INFO  org.catais.trf.check.App - Differenz der Gemeindegrenze
+18:09:27.933 [main] INFO  org.catais.trf.check.App - Differenz der Grenzpunkte
+18:09:27.935 [main] INFO  org.catais.trf.check.App - Differenz der Hoheitsgrenzpunkte
+18:09:27.935 [main] INFO  org.catais.trf.check.App - Differenz der LFP3
+18:09:27.936 [main] INFO  org.catais.trf.check.App - Stopping at: Tue Dec 29 18:09:27 CET 2015

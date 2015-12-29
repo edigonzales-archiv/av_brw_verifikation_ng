@@ -73,14 +73,14 @@ public class ViewsProcess extends Process {
 
 		String gsPosView = ""
 				+ "CREATE OR REPLACE VIEW " + dbschema + ".v_liegenschaften_grundstueckpos AS\n"
-				+ "SELECT p.*, g.nummer\n"
+				+ "SELECT p.*, g.nummer, g.art\n"
 				+ "FROM "+dbschema+".liegenschaften_grundstueck as g, "+dbschema+".liegenschaften_grundstueckpos as p\n"
 				+ "WHERE g.t_id = p.grundstueckpos_von;\n"
 				+ "GRANT SELECT ON " + dbschema + ".v_liegenschaften_grundstueckpos TO mspublic;\n\n\n";
 
 		String gsProjPosView = ""
 				+ "CREATE OR REPLACE VIEW " + dbschema + ".v_liegenschaften_projgrundstueckpos AS\n"
-				+ "SELECT p.*, g.nummer\n"
+				+ "SELECT p.*, g.nummer, g.art\n"
 				+ "FROM "+dbschema+".liegenschaften_projgrundstueck as g, "+dbschema+".liegenschaften_projgrundstueckpos as p\n"
 				+ "WHERE g.t_id = p.projgrundstueckpos_von;\n"
 				+ "GRANT SELECT ON " + dbschema + ".v_liegenschaften_projgrundstueckpos TO mspublic;\n\n\n";
@@ -99,6 +99,20 @@ public class ViewsProcess extends Process {
 				+ "WHERE l.t_id = p.lokalisationsnamepos_von;\n"
 				+ "GRANT SELECT ON " + dbschema + ".v_gebaeudeadressen_lokalisationsnamepos TO mspublic;\n\n\n";
 
+		String gpView = ""
+				+ "CREATE OR REPLACE VIEW " + dbschema + ".v_liegenschaften_grenzpunkt AS\n"
+				+ "SELECT gp.*, nf.gueltigkeit\n"
+				+ "FROM "+dbschema+".liegenschaften_lsnachfuehrung as nf, "+dbschema+".liegenschaften_grenzpunkt as gp\n"
+				+ "WHERE nf.t_id = gp.entstehung;\n"
+				+ "GRANT SELECT ON " + dbschema + ".v_liegenschaften_grenzpunkt TO mspublic;\n\n\n";
+	
+		String hgpView = ""
+				+ "CREATE OR REPLACE VIEW " + dbschema + ".v_gemeindegrenzen_hoheitsgrenzpunkt AS\n"
+				+ "SELECT gp.*, nf.gueltigkeit\n"
+				+ "FROM "+dbschema+".gemeindegrenzen_gemnachfuehrung as nf, "+dbschema+".gemeindegrenzen_hoheitsgrenzpunkt as gp\n"
+				+ "WHERE nf.t_id = gp.entstehung;\n"
+				+ "GRANT SELECT ON " + dbschema + ".v_gemeindegrenzen_hoheitsgrenzpunkt TO mspublic;\n\n\n";
+		
 		String sql = new StringBuilder()
 				.append(eoflView)
 				.append(eoliView)
@@ -112,6 +126,8 @@ public class ViewsProcess extends Process {
 				.append(gsProjPosView)
 				.append(hausnummerPosView)
 				.append(loknamePosView)
+				.append(gpView)
+				.append(hgpView)
 				.toString();
 			
 
