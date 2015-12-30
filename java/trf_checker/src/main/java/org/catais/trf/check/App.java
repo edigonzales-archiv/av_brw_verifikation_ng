@@ -1,5 +1,6 @@
 package org.catais.trf.check;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -52,13 +53,18 @@ public class App
     public static void main( String[] args )
     {
 		logger.info("Starting at: "+ new Date());
-		
+				
 		HashMap<String,String> params = new HashMap<String,String>();
 		
 		try {
 			// Read parameters from properties file.
 			String propFileName = "config.properties";
-			InputStream input = new FileInputStream(propFileName);
+			// Get the path where the jar file is located.
+			// Only works when program is executed as a runnable jar.
+			String propFilePath = new File(App.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath()).getParent();
+			
+//			InputStream input = new FileInputStream(propFileName);
+			InputStream input = new FileInputStream(propFilePath + File.separator + propFileName);
 			
 			Properties prop = new Properties();
 			prop.load(input);
