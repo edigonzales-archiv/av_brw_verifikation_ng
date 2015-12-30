@@ -1,0 +1,2 @@
+sudo adduser --gecos "" bjsvwrud
+sudo adduser --gecos "" bjsvwlue
