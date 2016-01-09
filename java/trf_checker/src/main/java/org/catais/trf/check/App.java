@@ -144,11 +144,11 @@ public class App
 			
 			// Nachführungsgeometer
 			logger.info("Import ITF von NF-Geometer.");
-//			itfReader.runImport(params.get("itf_nf"), "so_" + params.get("fosnr") + "_nf");
+			itfReader.runImport(params.get("itf_nf"), "so_" + params.get("fosnr") + "_nf");
 			
 			// Infogrips
 			logger.info("Import ITF von Infogrips.");
-//			itfReader.runImport(params.get("itf_ig"), "so_" + params.get("fosnr") + "_ig");
+			itfReader.runImport(params.get("itf_ig"), "so_" + params.get("fosnr") + "_ig");
 			
 			// Views
 			logger.info("View für Darstellung erstellen.");
@@ -159,28 +159,28 @@ public class App
 			// Create "_agi" schema
 			logger.info("Erstelle '_agi' Schema.");
 			SchemaProcess schemaProcess = new SchemaProcess(params);
-//			schemaProcess.run();
+			schemaProcess.run();
 			
 			// Create empty check tables
 			logger.info("Erstelle leere Check-Tabellen.");
 			CheckTablesProcess checkTablesProcess = new CheckTablesProcess(params);
-//			checkTablesProcess.run();
+			checkTablesProcess.run();
 			
 			// Find wrong geometries of Nummerierungsbereiche
 			logger.info("Prüfe NB-Geometrien.");
 			IdentIdGeometryProcess identIdGeometryProcess = new IdentIdGeometryProcess(params);
-//			identIdGeometryProcess.run();
+			identIdGeometryProcess.run();
 			
 			// Find control points category 3 outside perimeter
 			logger.info("LFP3 ausserhalb Gemeindegrenze.");
 			ControlPointOutsideProcess controlPointOutsideProcess = new ControlPointOutsideProcess(params);
-//			controlPointOutsideProcess.run();
+			controlPointOutsideProcess.run();
 			
 			// Calculate sum areas real estate and compare it with
 			// area of municipality.
 			logger.info("Flächenvergleich Liegenschaft - Gemeindegrenze");
 			CommunityAreaProcess communityAreaProcess = new CommunityAreaProcess(params);
-//			communityAreaProcess.run();
+			communityAreaProcess.run();
 			
 			// Calculate the diff segments for real estates.
 			logger.info("Differenz der Liegenschaften");
@@ -189,7 +189,7 @@ public class App
 			params.put("inputTable", "liegenschaften_liegenschaft");
 			
 			DiffSegmentsProcess diffRealEstateProcess = new DiffSegmentsProcess(params);
-//			diffRealEstateProcess.run();
+			diffRealEstateProcess.run();
 			
 			// Calculate the diff segments for proj real estates.
 			logger.info("Differenz der projektierten Liegenschaften");
@@ -198,7 +198,7 @@ public class App
 			params.put("inputTable", "liegenschaften_projliegenschaft");
 			
 			DiffSegmentsProcess diffProjRealEstateProcess = new DiffSegmentsProcess(params);
-//			diffProjRealEstateProcess.run();
+			diffProjRealEstateProcess.run();
 
 			// Calculate the diff segments for land surface.
 			logger.info("Differenz der Bodenbedeckung");
@@ -207,7 +207,7 @@ public class App
 			params.put("inputTable", "bodenbedeckung_boflaeche");
 			
 			DiffSegmentsProcess diffLandSurfaceProcess = new DiffSegmentsProcess(params);
-//			diffLandSurfaceProcess.run();
+			diffLandSurfaceProcess.run();
 			
 			// Calculate the diff segments community border.
 			logger.info("Differenz der Gemeindegrenze");
@@ -216,7 +216,7 @@ public class App
 			params.put("inputTable", "gemeindegrenzen_gemeindegrenze");
 			
 			DiffSegmentsProcess diffCommunityBorderProcess = new DiffSegmentsProcess(params);
-//			diffCommunityBorderProcess.run();	
+			diffCommunityBorderProcess.run();	
 			
 			// Calculate the difference of boundary points.
 			logger.info("Differenz der Grenzpunkte");
@@ -225,7 +225,7 @@ public class App
 			params.put("inputTable", "liegenschaften_grenzpunkt");
 
 			DiffPointsProcess diffBoundaryPointProcess = new DiffPointsProcess(params);
-//			diffBoundaryPointProcess.run();
+			diffBoundaryPointProcess.run();
 			
 			// Calculate the difference of territorial boundary points.
 			logger.info("Differenz der Hoheitsgrenzpunkte");
@@ -234,7 +234,7 @@ public class App
 			params.put("inputTable", "gemeindegrenzen_hoheitsgrenzpunkt");
 
 			DiffPointsProcess diffTerritorialBoundaryPointProcess = new DiffPointsProcess(params);
-//			diffTerritorialBoundaryPointProcess.run();
+			diffTerritorialBoundaryPointProcess.run();
 
 			// Calculate the difference of control points points.
 			logger.info("Differenz der LFP3");
@@ -243,7 +243,7 @@ public class App
 			params.put("inputTable", "fixpunktekategorie3_lfp3");
 
 			DiffPointsProcess diffControlPointProcess = new DiffPointsProcess(params);
-//			diffControlPointProcess.run();
+			diffControlPointProcess.run();
 
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
