@@ -3315,3 +3315,9 @@ GRANT SELECT ON so_2511_nf.v_gemeindegrenzen_hoheitsgrenzpunkt TO mspublic;
 16:24:57.552 [main] INFO  org.catais.trf.check.App - Starting at: Fri Jan 08 16:24:57 CET 2016
 16:24:57.553 [main] ERROR org.catais.trf.check.App - /home/stefan/Projekte/av_brw_verifikation_ng/java/trf_checker/target/config.properties (No such file or directory)
 16:24:57.553 [main] INFO  org.catais.trf.check.App - Stopping at: Fri Jan 08 16:24:57 CET 2016
+16:36:13.413 [main] INFO  org.catais.trf.check.App - Starting at: Sat Jan 16 16:36:13 CET 2016
+16:36:13.415 [main] ERROR org.catais.trf.check.App - /home/stefan/Projekte/av_brw_verifikation_ng/java/trf_checker/target/config.properties (No such file or directory)
+16:36:13.415 [main] INFO  org.catais.trf.check.App - Stopping at: Sat Jan 16 16:36:13 CET 2016
+12:15:54.850 [main] INFO  org.catais.trf.check.App - Starting at: Mon Oct 24 12:15:54 CEST 2016
+12:15:54.852 [main] ERROR org.catais.trf.check.App - /home/stefan/Projekte/av_brw_verifikation_ng/java/trf_checker/target/config.properties (No such file or directory)
+12:15:54.852 [main] INFO  org.catais.trf.check.App - Stopping at: Mon Oct 24 12:15:54 CEST 2016
